@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Hello World - Shubidumdu&#x27;s Rust Book</title>
+        <title>Formatted Print - Shubidumdu&#x27;s Rust Book</title>
         
         
 
@@ -18,28 +18,28 @@
         <meta name="theme-color" content="#ffffff" />
 
         
-        <link rel="icon" href="../favicon.svg">
+        <link rel="icon" href="../../favicon.svg">
         
         
-        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="shortcut icon" href="../../favicon.png">
         
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
         
-        <link rel="stylesheet" href="../css/print.css" media="print">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
         
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
         
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
         
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -49,7 +49,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "../";
+            var path_to_root = "../../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../hello/index.html" class="active"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item expanded "><a href="../../hello/print/index.html" class="active"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -131,7 +131,7 @@
 
                     <div class="right-buttons">
                         
-                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
@@ -165,37 +165,73 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="hello-world"><a class="header" href="#hello-world">Hello, World!</a></h1>
-<pre><pre class="playground"><code class="language-rust editable edition2018">// `//` 혹은 `/* ... */`을 통해 주석을 작성할 수 있습니다.
-
-/*
-  이는 컴파일링 단계에서 무시됩니다.
-*/
-
-fn main() {
-  println!(&quot;Hello World!&quot;);
+                        <h1 id="formatted-print"><a class="header" href="#formatted-print">Formatted Print</a></h1>
+<p><code>std::fmt</code>에 의해 정의된 매크로들에는 다음과 같은 것들이 있습니다.</p>
+<ul>
+<li><code>format!</code>: String 타입으로 포맷 텍스트를 작성합니다.</li>
+<li><code>print!</code> : <code>format!</code>과 동일하되, 콘솔에 이를 출력합니다. (<code>io::stdout</code>)</li>
+<li><code>println!</code> : <code>print!</code>와 동일하되, 줄이 변경됩니다.</li>
+<li><code>eprint!</code> : <code>format!</code>과 동일하되, standard error로 이를 출력합니다. (<code>io::stderr</code>)</li>
+<li><code>eprintln!</code> : <code>eprint!</code>와 동일하되, 줄이 변경됩니다.</li>
+</ul>
+<p>위의 매크로 모두 같은 방식으로 구문을 분석하며, 컴파일 시점에 포맷이 적합한지 체크됩니다.</p>
+<p>여러 개의 인수를 가져와서 사용할 수도 있습니다. 별도로 0, 1과 같이 인덱싱을 하지 않더라도, 인수의 순서대로 사용합니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+  println!(&quot;{0}, this is {1}. {1}, this is {0}&quot;, &quot;Tom&quot;, &quot;Jack&quot;);
 }
 </code></pre></pre>
-<p>Rust는 다음 명령을 통해 파일을 바이너리로 컴파일링합니다.</p>
-<pre><code class="language-bash">$ rustc &lt;path&gt;
-</code></pre>
-<p>컴파일 이후, 컴파일된 파일(확장자가 없음)을 실행하여 프로그램을 확인할 수 있습니다.</p>
-<pre><code class="language-bash">$ ./hello
-Hello World!
-</code></pre>
+<p>인수에 이름을 붙일 수도 있습니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+  println!(
+    &quot;{subject} {verb} {object}&quot;,
+    object = &quot;the lazy dog&quot;,
+    subject = &quot;the quick brown fox&quot;,
+    verb = &quot;jumps over&quot;
+  );
+}
+</code></pre></pre>
+<p><code>:&lt;trait&gt;</code>를 붙여 특정 형태로 포맷을 적용하여 사용할 수 있습니다.
+아래에서는 <code>:b</code>가 사용됐는데, 이는 이진법을 적용하여 변환한다는 뜻입니다.
+따라서 아래는 인수 2를 받아 10으로 출력합니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+  println!(
+    &quot;{} of {:b} people know binary, the other half doesn't&quot;,
+    1, 2
+  );
+}
+</code></pre></pre>
+<p>특정 width에 만족한 상태에서 우측 정렬으로 출력할 수도 있습니다.
+아래는 <code>      1</code>으로, 좌측에 5개의 여백이 생깁니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+  println!(&quot;{number:&gt;width$}&quot;, number = 1, width = 6);
+}
+</code></pre></pre>
+<p>특정 width를 만족하도록 특정 값으로 padding을 채워넣을 수도 있습니다.
+아래는 <code>000001</code>로 출력됩니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+  println!(&quot;{number:&gt;0width$}&quot;, number = 1, width = 6);
+}
+</code></pre></pre>
+<p>std::fmt은 텍스트 표시를 제어하는 여러 트레이트들을 포함하며, 아래 두 가지가 중요한 기본 형태입니다.</p>
+<ul>
+<li><code>fmt::Debug</code> - <code>{:?}</code> 마커를 사용하며, 디버깅 목적으로 텍스트를 포맷합니다.</li>
+<li><code>fmt::Display</code> - <code>{}</code> 마커를 사용하며, 좀더 유연하고 이용자 친화적인 형태로 텍스트를 포맷합니다.</li>
+</ul>
+<p>위의 예시에서는 <code>fmt::Display</code>를 사용했는데, std 라이브러리는 해당 유형들에 대한 구현을 제공하기 때문입니다.
+fmt::Display 트레이트의 실행은 자동으로 <code>ToString</code> trait를 실행시켜 타입을 String으로 변환합니다.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../hello/comment.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../hello/comment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../hello/print/debug.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -207,13 +243,13 @@ Hello World!
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../hello/comment.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../hello/comment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../hello/print/debug.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -234,22 +270,22 @@ Hello World!
         
 
         
-        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         
 
         
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         

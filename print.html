@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="index.html">Introduction</a></li><li class="chapter-item "><a href="hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="hello/print.html"><strong aria-hidden="true">1.2.</strong> Print</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="index.html">Introduction</a></li><li class="chapter-item "><a href="hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -207,7 +207,7 @@ Hello World!
  }
 </code></pre></pre>
 <p><code>///</code>와 <code>//!</code>는 Doc Comment라고 하며, 이에 대해선 추후에 다루겠습니다.</p>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="1-formatted-print"><a class="header" href="#1-formatted-print">1. Formatted Print</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="formatted-print"><a class="header" href="#formatted-print">Formatted Print</a></h1>
 <p><code>std::fmt</code>에 의해 정의된 매크로들에는 다음과 같은 것들이 있습니다.</p>
 <ul>
 <li><code>format!</code>: String 타입으로 포맷 텍스트를 작성합니다.</li>
@@ -242,25 +242,79 @@ Hello World!
   );
 }
 </code></pre></pre>
-<p>특정 width만큼 우측으로 띄워서 출력할 수도 있습니다.
-아래는 <code>      1</code>으로, 좌측에 6개의 여백이 생깁니다.</p>
+<p>특정 width에 만족한 상태에서 우측 정렬으로 출력할 수도 있습니다.
+아래는 <code>      1</code>으로, 좌측에 5개의 여백이 생깁니다.</p>
 <pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
   println!(&quot;{number:&gt;width$}&quot;, number = 1, width = 6);
 }
 </code></pre></pre>
-<p>특정 width만큼 padding을 채워넣을 수도 있습니다.
-아래는 <code>0000001</code>로 출력됩니다.</p>
+<p>특정 width를 만족하도록 특정 값으로 padding을 채워넣을 수도 있습니다.
+아래는 <code>000001</code>로 출력됩니다.</p>
 <pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
   println!(&quot;{number:&gt;0width$}&quot;, number = 1, width = 6);
 }
 </code></pre></pre>
-<p>std::fmt은 텍스트 표시를 제어하는 여러 traits들을 포함하며, 아래 두 형태가 중요한 기본 형태입니다.</p>
+<p>std::fmt은 텍스트 표시를 제어하는 여러 트레이트들을 포함하며, 아래 두 가지가 중요한 기본 형태입니다.</p>
 <ul>
 <li><code>fmt::Debug</code> - <code>{:?}</code> 마커를 사용하며, 디버깅 목적으로 텍스트를 포맷합니다.</li>
 <li><code>fmt::Display</code> - <code>{}</code> 마커를 사용하며, 좀더 유연하고 이용자 친화적인 형태로 텍스트를 포맷합니다.</li>
 </ul>
 <p>위의 예시에서는 <code>fmt::Display</code>를 사용했는데, std 라이브러리는 해당 유형들에 대한 구현을 제공하기 때문입니다.
-fmt::Display trait의 실행은 자동으로 <code>ToString</code> trait를 실행시켜 타입을 String으로 변환합니다.</p>
+fmt::Display 트레이트의 실행은 자동으로 <code>ToString</code> trait를 실행시켜 타입을 String으로 변환합니다.</p>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="debug"><a class="header" href="#debug">Debug</a></h1>
+<p>트페이트를 포매팅하는 <code>std::fmt</code>를 사용하고자 하는 모든 타입들은 <strong>출력 가능해야</strong> 합니다. <code>std</code> 라이브러리에서와 같은 타입들에 대해서만 이 부분이 자동적으로 구현되어 있습니다. </p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+  println!(&quot;{:?} months in a year.&quot;, 12);
+  println!(&quot;{1:?} {0:?} is the {actor:?} name.&quot;,
+            &quot;Slater&quot;,
+            &quot;Christian&quot;,
+            actor=&quot;actor's&quot;);
+}
+</code></pre></pre>
+<p>그 외의 다른 타입들은 <strong>반드시</strong> 수동으로 이를 수행해주어야 합니다.</p>
+<p><code>fmt::Debug</code> 트레이트는 이 과정을 상당히 직관적으로 만들어줍니다. 모든 타입들이 <code>fmt::Debug</code> 구현을 <code>derive</code> (자동 생성) 할 수 있습니다. 이는 반드시 수동적으로 구현해주어야 하는 <code>fmt::Display</code>에 대해서는 적용되지 않습니다.</p>
+<p>아래의 <code>structure</code>는 현재로선 출력에 대해 구현하지 않았기 때문에 <code>fmt::Display</code> 혹은 <code>fmt::Debug</code>로 출력할 수 없습니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">struct UnPrintable(i32);
+
+fn main() {
+  println!(&quot;{:?} would not print!&quot;, Structure(3));
+}
+</code></pre></pre>
+<p><code>derive</code> 어트리뷰트를 사용하면 <code>fmt::Debug</code>로 해당 <code>struct</code>를 출력가능하도록 자동으로 구현할 수 있습니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">#[derive(Debug)]
+struct DebugPrintable(i32);
+
+fn main() {
+  println!(&quot;Now {:?} will printed!&quot;, DebugPrintable(3));
+}
+</code></pre></pre>
+<p>여러 스트럭쳐들을 겹쳐 사용하는 경우에도 가능합니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">#[derive(Debug)]
+struct Structure(i32);
+
+#[derive(Debug)]
+struct Deep(Structure);
+
+fn main() {
+  println!(&quot;Now {:?} will print!&quot;, Deep(Structure(7)));
+}
+</code></pre></pre>
+<p>위에서 본 것처럼, <code>fmt::Debug</code>는 분명 스트럭처를 인쇄 가능하도록 만들어주긴 하지만 썩 보기 좋은 형태는 아닙니다. 따라서 Rust는 <code>{:#?}</code>을 통해 &quot;이쁘게 출력&quot;하는 기능을 제공합니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">#[derive(Debug)]
+struct Person&lt;'a&gt; {
+    name: &amp;'a str,
+    age: u8
+}
+
+fn main() {
+    let name = &quot;Peter&quot;;
+    let age = 27;
+    let peter = Person { name, age };
+
+    // Pretty print
+    println!(&quot;{:#?}&quot;, peter);
+}
+</code></pre></pre>
 
                     </main>
 
