@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Enums - Shubidumdu&#x27;s Rust Book</title>
+        <title>Testcase: linked-list - Shubidumdu&#x27;s Rust Book</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item "><a href="../../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="../../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="../../hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../primitives/literals.html"><strong aria-hidden="true">2.1.</strong> Literals and operators</a></li><li class="chapter-item "><a href="../../primitives/tuple.html"><strong aria-hidden="true">2.2.</strong> Tuples</a></li><li class="chapter-item "><a href="../../primitives/array.html"><strong aria-hidden="true">2.3.</strong> Arrays and Slices</a></li></ol></li><li class="chapter-item expanded "><a href="../../custom_types/index.html"><strong aria-hidden="true">3.</strong> Custom Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../custom_types/structs.html"><strong aria-hidden="true">3.1.</strong> Structures</a></li><li class="chapter-item expanded "><a href="../../custom_types/enums/index.html" class="active"><strong aria-hidden="true">3.2.</strong> Enums</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../custom_types/enums/use.html"><strong aria-hidden="true">3.2.1.</strong> use</a></li><li class="chapter-item "><a href="../../custom_types/enums/c-like.html"><strong aria-hidden="true">3.2.2.</strong> C-like</a></li><li class="chapter-item "><a href="../../custom_types/enums/testcase_linked_list.html"><strong aria-hidden="true">3.2.3.</strong> Testcase: linked-list</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item "><a href="../../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="../../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="../../hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../primitives/literals.html"><strong aria-hidden="true">2.1.</strong> Literals and operators</a></li><li class="chapter-item "><a href="../../primitives/tuple.html"><strong aria-hidden="true">2.2.</strong> Tuples</a></li><li class="chapter-item "><a href="../../primitives/array.html"><strong aria-hidden="true">2.3.</strong> Arrays and Slices</a></li></ol></li><li class="chapter-item expanded "><a href="../../custom_types/index.html"><strong aria-hidden="true">3.</strong> Custom Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../custom_types/structs.html"><strong aria-hidden="true">3.1.</strong> Structures</a></li><li class="chapter-item expanded "><a href="../../custom_types/enums/index.html"><strong aria-hidden="true">3.2.</strong> Enums</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../custom_types/enums/use.html"><strong aria-hidden="true">3.2.1.</strong> use</a></li><li class="chapter-item "><a href="../../custom_types/enums/c-like.html"><strong aria-hidden="true">3.2.2.</strong> C-like</a></li><li class="chapter-item expanded "><a href="../../custom_types/enums/testcase_linked_list.html" class="active"><strong aria-hidden="true">3.2.3.</strong> Testcase: linked-list</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -165,98 +165,91 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="enums"><a class="header" href="#enums">Enums</a></h1>
-<p><code>enum</code> 키워드는 여러 형태 중 하나일 수 있는 타입을 생성하도록 해줍니다. <code>struct</code>로서 유효한 변형 형태라면 <code>enum</code>에서도 유효합니다.</p>
-<pre><pre class="playground"><code class="language-rust editable edition2018">// 웹 이벤트를 분류하는 `enum`을 만듭니다.
-// 이벤트 이름과 타입 정보가 변형 형태를 명시합니다.
-// 각각의 변형은 구분되며, 독립적입니다.
-enum WebEvent {
-    // enum은 `unit` 형태의 구조 일수도 있고,
-    PageLoad,
-    PageUnload,
-    // 튜플 구조일 수도 있으며,
-    KeyPress(char),
-    Paste(String),
-    // c-like 구조일 수도 있습니다.
-    Click { x: i64, y: i64 },
+                        <h1 id="testcase-linked-list"><a class="header" href="#testcase-linked-list">Testcase: linked-list</a></h1>
+<p><code>enums</code>의 일반적인 용도는 링크드 리스트(linked-list)를 만드는 것입니다.</p>
+<pre><pre class="playground"><code class="language-rust edition2018">use crate::List::*;
+
+enum List {
+    // Cons : (요소, 다음 노드에 대한 포인터)
+    Cons(u32, Box&lt;List&gt;),
+    // Nil : 링크드 리스트의 끝을 나타내는 노드
+    Nil,
 }
 
-// 아래 함수는 `WebEvent` enum을 받은 뒤 아무 것도 반환하지 않습니다.
-fn inspect(event: WebEvent) {
-    // `match`는 C의 `switch`와 유사합니다.
-    match event {
-        WebEvent::PageLoad =&gt; println!(&quot;page loaded&quot;),
-        WebEvent::PageUnload =&gt; println!(&quot;page unloaded&quot;),
-        WebEvent::KeyPress(c) =&gt; println!(&quot;pressed '{}'.&quot;, c),
-        WebEvent::Paste(s) =&gt; println!(&quot;pasted \&quot;{}\&quot;.&quot;, s),
-        WebEvent::Click { x, y } =&gt; {
-            println!(&quot;clicked at x={}, y={}.&quot;, x, y);
-        },
+// 메서드를 enum에 연결할 수 있습니다.
+impl List {
+    // 빈 리스트 생성
+    fn new() -&gt; List {
+        // `Nil` 은 리스트 타입을 보유합니다..
+        Nil
     }
-}
 
-fn main() {
-    let pressed = WebEvent::KeyPress('x');
-    // `to_owned()` 메서드는 스트링 슬라이스에서
-    // 스스로의 `String`을 생성해냅니다.
-    let pasted  = WebEvent::Paste(&quot;my text&quot;.to_owned());
-    let click   = WebEvent::Click { x: 20, y: 80 };
-    let load    = WebEvent::PageLoad;
-    let unload  = WebEvent::PageUnload;
+    // 새로운 값이 추가된 동일한 리스트를 반환합니다.
+    fn prepend(self, elem: u32) -&gt; List {
+        // `Cons`도 리스트 타입을 보유합니다.
+        Cons(elem, Box::new(self))
+    }
 
-    inspect(pressed);
-    inspect(pasted);
-    inspect(click);
-    inspect(load);
-    inspect(unload);
-}
-</code></pre></pre>
-<h2 id="type-aliases"><a class="header" href="#type-aliases">Type aliases</a></h2>
-<p>Type aliases(타입 별칭)을 사용한다면, 각각의 enum을 별칭으로 다룰 수 있습니다. enum의 이름이 너무 길거나, 너무 일반적이라서 새로 이름을 짓고자 할때 사용할 수 있습니다.</p>
-<pre><pre class="playground"><code class="language-rust editable edition2018">enum VeryVerboseEnumOfThingsToDoWithNumbers {
-    Add,
-    Subtract,
-}
+    // 리스트의 길이를 반환합니다.
+    // 아래 메서드는는 `self`의 
+    // 변형 형태에 따라 달라지기 때문에
+    // `self`에 대해 match를 수행해야 합니다.
+    fn len(&amp;self) -&gt; u32 {
+        // `self`는 `&amp;List` 타입을 갖고,
+        // `*self`는 `List` 타입을 갖습니다.
+        // 콘크리트 타입 `T`에 대한 매치가 
+        // 참조 `&amp;T`의 매치보다 선호됩니다.
+        match *self {
+            // `self`는 빌려온(borrow) 것이기에, 
+            // `tail`을 소유할 수 없습니다.
+            // 대신에 `tail`에 대한 참조를 가져옵니다.
+            Cons(_, ref tail) =&gt; 1 + tail.len(),
+            // 빈 리스트는 길이가 0입니다.
+            Nil =&gt; 0
+        }
+    }
 
-// Type alias를 생성합니다.
-type Operations = VeryVerboseEnumOfThingsToDoWithNumbers;
-
-fn main() {
-    // 각 변형을 alias를 통해 참조할 수 있습니다.
-    let x = Operations::Add;
-}
-</code></pre></pre>
-<p>가장 일반적으로 이를 많이 사용하게 되는 경우는 <code>impl</code> 블록에서 <code>Self</code> 별칭을 사용하는 경우입니다.</p>
-<pre><code class="language-rs editable">enum VeryVerboseEnumOfThingsToDoWithNumbers {
-    Add,
-    Subtract,
-}
-
-impl VeryVerboseEnumOfThingsToDoWithNumbers {
-    fn run(&amp;self, x: i32, y: i32) -&gt; i32 {
-        match self {
-            Self::Add =&gt; x + y,
-            Self::Subtract =&gt; x - y,
+    // 리스트의 표현을 (Heap 할당) 문자열로 반환합니다.
+    fn stringify(&amp;self) -&gt; String {
+        match *self {
+            Cons(head, ref tail) =&gt; {
+                // `format!`은 `print!`와 유사하지만, 
+                // 콘솔 출력 대신 heap 할당 문자열을 반환합니다.
+                format!(&quot;{}, {}&quot;, head, tail.stringify())
+            },
+            Nil =&gt; {
+                format!(&quot;Nil&quot;)
+            },
         }
     }
 }
-</code></pre>
-<p>enum과 Type Alias에 대해 더 많이 살펴보려면, <a href="https://github.com/rust-lang/rust/pull/61682/#issuecomment-502472847">여기</a>를 읽어보세요.</p>
+
+fn main() {
+    // 빈 링크드 리스트를 만듭니다.
+    let mut list = List::new();
+
+    // 몇몇 요소들을 추가합니다.
+    list = list.prepend(1);
+    list = list.prepend(2);
+    list = list.prepend(3);
+
+    // 리스트의 상태를 출력합니다.
+    println!(&quot;linked list has length: {}&quot;, list.len());
+    println!(&quot;{}&quot;, list.stringify());
+}
+
+</code></pre></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../../custom_types/structs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../custom_types/enums/c-like.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="../../custom_types/enums/use.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -266,15 +259,11 @@ impl VeryVerboseEnumOfThingsToDoWithNumbers {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../../custom_types/structs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../custom_types/enums/c-like.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="../../custom_types/enums/use.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
