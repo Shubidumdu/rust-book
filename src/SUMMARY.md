@@ -7,3 +7,4 @@
     - [Debug](hello/print/debug.md)
     - [Display](hello/print/display/index.md)
       - [Testcase: List](hello/print/display/list.md)
+    - [Formatting](hello/print/formatting.md)

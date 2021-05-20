@@ -10,7 +10,7 @@ write!(f, "{}", value)?;
 
 이것을 사용하면, `Vec` 구조에 대한 `fmt::Display`도 직관적으로 구현할 수 있습니다.
 
-```rust
+```rust,editable
 use std::fmt;
 
 // Vec를 갖는 List란 이름의 구조를 정의
