@@ -9,3 +9,4 @@
       - [Testcase: List](hello/print/display/list.md)
     - [Formatting](hello/print/formatting.md)
 - [Primitives](primitives/index.md)
+  - [Literals and operators](primitives/literals.md)
