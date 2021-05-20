@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Debug - Shubidumdu&#x27;s Rust Book</title>
+        <title>Formatting - Shubidumdu&#x27;s Rust Book</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item expanded "><a href="../../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../hello/print/debug.html" class="active"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="../../hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item expanded "><a href="../../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item expanded "><a href="../../hello/print/formatting.html" class="active"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -165,75 +165,91 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="debug"><a class="header" href="#debug">Debug</a></h1>
-<p>트페이트를 포매팅하는 <code>std::fmt</code>를 사용하고자 하는 모든 타입들은 <strong>출력 가능해야</strong> 합니다. <code>std</code> 라이브러리에서와 같은 타입들에 대해서만 이 부분이 자동적으로 구현되어 있습니다. </p>
-<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
-  println!(&quot;{:?} months in a year.&quot;, 12);
-  println!(&quot;{1:?} {0:?} is the {actor:?} name.&quot;,
-            &quot;Slater&quot;,
-            &quot;Christian&quot;,
-            actor=&quot;actor's&quot;);
-}
-</code></pre></pre>
-<p>그 외의 다른 타입들은 <strong>반드시</strong> 수동으로 이를 수행해주어야 합니다.</p>
-<p><code>fmt::Debug</code> 트레이트는 이 과정을 상당히 직관적으로 만들어줍니다. 모든 타입들이 <code>fmt::Debug</code> 구현을 <code>derive</code> (자동 생성) 할 수 있습니다. 이는 반드시 수동적으로 구현해주어야 하는 <code>fmt::Display</code>에 대해서는 적용되지 않습니다.</p>
-<p>아래의 <code>structure</code>는 현재로선 출력에 대해 구현하지 않았기 때문에 <code>fmt::Display</code> 혹은 <code>fmt::Debug</code>로 출력할 수 없습니다.</p>
-<pre><pre class="playground"><code class="language-rust editable edition2018">struct UnPrintable(i32);
+                        <h1 id="formatting"><a class="header" href="#formatting">Formatting</a></h1>
+<p>앞서 포맷팅이 <strong>포맷 스트링</strong>을 통해서 형태가 정해짐을 확인할 수 있었습니다.</p>
+<ul>
+<li><code>format!(&quot;{}&quot;, foo)</code> -&gt; <code>&quot;3735928559&quot;</code></li>
+<li><code>format!(&quot;0x{:X}&quot;, foo)</code> -&gt; <code>&quot;0xDEADBEEF&quot;</code></li>
+<li><code>format!(&quot;0o{:o}&quot;, foo)</code> -&gt; &quot;0o33653337357&quot;</li>
+</ul>
+<p>동일한 값인 <code>foo</code>에 대해서도 어떤 매개변수 타입이 사용되느냐에 따라 다르게 포맷팅됩니다.</p>
+<p>이러한 포맷팅 기능은 트레이트를 통해서 구현될 수 있으며, 각각의 매개변수 타입에 대해 하나의 트레이트가 사용됩니다.. 가장 일반적인 포맷팅 프레이트는 <code>Display</code>로, 이는 매개변수 타입이 구체화되지 않은 경우에 다루어집니다. (<code>{}</code>)</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">use std::fmt::{self, Formatter, Display};
 
-fn main() {
-  println!(&quot;{:?} would not print!&quot;, Structure(3));
+struct City {
+  name: &amp;'static str,
+  lat: f32,
+  lon: f32,
 }
-</code></pre></pre>
-<p><code>derive</code> 어트리뷰트를 사용하면 <code>fmt::Debug</code>로 해당 <code>struct</code>를 출력가능하도록 자동으로 구현할 수 있습니다.</p>
-<pre><pre class="playground"><code class="language-rust editable edition2018">#[derive(Debug)]
-struct DebugPrintable(i32);
 
-fn main() {
-  println!(&quot;Now {:?} will printed!&quot;, DebugPrintable(3));
+impl Display for City {
+  // `f`는 버퍼로, `fmt` 메서드는 여기에 포맷 스트링을 작성해주어야 합니다.
+  fn fmt(&amp;self, f: &amp;mut Formatter) -&gt; fmt::Result {
+    let lat_c = if self.lat &gt;= 0.0 { 'N' } else { 'S' };
+    let lon_c = if self.lon &gt;= 0.0 { 'E' } else { 'W' };
+
+      // `write!`는 `format!`과 유사하지만
+      // 포맷스트링을 `f` 버퍼에 작성합니다.
+      //
+      // 아래의 `:.3`은 소수 3번째 자리까지 반올림을 수행합니다.
+      write!(f, &quot;{}: {:.3}°{} {:.3}°{}&quot;,
+        self.name, 
+        self.lat.abs(), 
+        lat_c, 
+        self.lon.abs(), 
+        lon_c)
+  }
 }
-</code></pre></pre>
-<p>여러 스트럭쳐들을 겹쳐 사용하는 경우에도 가능합니다.</p>
-<pre><pre class="playground"><code class="language-rust editable edition2018">#[derive(Debug)]
-struct Structure(i32);
 
 #[derive(Debug)]
-struct Deep(Structure);
+struct Color {
+    red: u8,
+    green: u8,
+    blue: u8,
+}
+
+// RGB 형태의 `Color` 구조에 Hex출력을 추가해보겠습니다.
+impl Display for Color {
+    fn fmt(&amp;self, f: &amp;mut Formatter) -&gt; fmt::Result {
+        // `{:02X}`의 경우,
+        // `:02`는 width(`2`) 만큼 0을 padding으로 넣습니다.
+        // `:X`는 Upper Hex(16진수)로 변환시킵니다.
+        write!(f, &quot;RGB ({0}, {1}, {2}) 0x{0:02X}{1:02X}{2:02X}&quot;, 
+            self.red, 
+            self.green, 
+            self.blue)
+    }
+}
 
 fn main() {
-  println!(&quot;Now {:?} will print!&quot;, Deep(Structure(7)));
+    for city in [
+        City { name: &quot;Dublin&quot;, lat: 53.347778, lon: -6.259722 },
+        City { name: &quot;Oslo&quot;, lat: 59.95, lon: 10.75 },
+        City { name: &quot;Vancouver&quot;, lat: 49.25, lon: -123.1 },
+    ].iter() {
+        println!(&quot;{}&quot;, *city);
+    }
+    for color in [
+        Color { red: 128, green: 255, blue: 90 },
+        Color { red: 0, green: 3, blue: 254 },
+        Color { red: 0, green: 0, blue: 0 },
+    ].iter() {
+        println!(&quot;{}&quot;, *color);
+    }
 }
 </code></pre></pre>
-<p>위에서 본 것처럼, <code>fmt::Debug</code>는 분명 스트럭처를 인쇄 가능하도록 만들어주긴 하지만 썩 보기 좋은 형태는 아닙니다. 따라서 Rust는 <code>{:#?}</code>을 통해 &quot;이쁘게 출력&quot;하는 기능을 제공합니다.</p>
-<pre><pre class="playground"><code class="language-rust editable edition2018">#[derive(Debug)]
-struct Person&lt;'a&gt; {
-    name: &amp;'a str,
-    age: u8
-}
-
-fn main() {
-    let name = &quot;Peter&quot;;
-    let age = 27;
-    let peter = Person { name, age };
-
-    // Pretty print
-    println!(&quot;{:#?}&quot;, peter);
-}
-</code></pre></pre>
+<p>원하는 형태로 포매팅을 하기 위한 매개변수의 종류들에 대해서는 <a href="https://doc.rust-lang.org/std/fmt/">여기</a>에서 자세히 찾아볼 수 있습니다.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../../hello/print/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../hello/print/display/list.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="../../hello/print/display/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -243,15 +259,11 @@ fn main() {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../../hello/print/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../hello/print/display/list.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="../../hello/print/display/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
