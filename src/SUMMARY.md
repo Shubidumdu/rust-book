@@ -12,3 +12,5 @@
   - [Literals and operators](primitives/literals.md)
   - [Tuples](primitives/tuple.md)
   - [Arrays and Slices](primitives/array.md)
+- [Custom Types](custom_types/index.md)
+  - [Structures](custom_types/structs.md)

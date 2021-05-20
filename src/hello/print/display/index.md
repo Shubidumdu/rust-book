@@ -85,7 +85,7 @@ fn main() {
 
 추가적으로, 아래는 복소수 구조를 만들고, 이에 대한 출력을 처리한 내용입니다.
 
-```rust
+```rust,editable
 use std::fmt;
 
 #[derive(Debug)]

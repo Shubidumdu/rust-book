@@ -2,7 +2,7 @@
 
 튜플은 여러 값들의 컬렉션입니다. 튜플은 `()` 괄호를 통해 생성되며, 튜플의 각 값들은 타입 시그니처의 값(`(T1, T2, ...)`)입니다. 튜플은 여러 값들을 보유할 수 있기 때문에, 함수에서 여러 값들을 반환하기 위해 튜플을 사용할 수 있습니다.
 
-```rust
+```rust,editable
 use std::fmt;
 
 // 튜플은 함수의 인수 혹은 반환값으로 사용될 수 있습니다.
@@ -25,8 +25,8 @@ impl fmt::Display for Matrix {
 }
 
 //
-fn transpose(matrix: Matrix) -> ((first, second, third, fourth)) {
-  // let (first, second, third, fourth) = matrix;
+fn transpose(matrix: Matrix) -> (matrix) {
+  let (first, second, third, fourth) = matrix;
   (first, third, second, fourth)
 }
 
@@ -67,6 +67,7 @@ fn main() {
   println!("{:?}, {:?}, {:?}, {:?}", a, b, c, d);
 
   // 
+  let matrix = Matrix(1.1, 1.2, 2.1, 2.2);
   println!("Matrix:\n{}", matrix);
   println!("Transpose:\n{}", transpose(matrix));
 }
