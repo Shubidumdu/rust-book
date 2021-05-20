@@ -15,4 +15,5 @@
 - [Custom Types](custom_types/index.md)
   - [Structures](custom_types/structs.md)
   - [Enums](custom_types/enums/index.md)
-  - [use](custom_types/enums/use.md)
+    - [use](custom_types/enums/use.md)
+    - [C-like](custom_types/enums/c-like.md)
