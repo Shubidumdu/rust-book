@@ -11,3 +11,4 @@
 - [Primitives](primitives/index.md)
   - [Literals and operators](primitives/literals.md)
   - [Tuples](primitives/tuple.md)
+  - [Arrays and Slices](primitives/array.md)
