@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="index.html">Introduction</a></li><li class="chapter-item "><a href="hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item "><a href="primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="index.html">Introduction</a></li><li class="chapter-item "><a href="hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item "><a href="primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="primitives/literals.html"><strong aria-hidden="true">2.1.</strong> Literals and operators</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -572,6 +572,35 @@ fn main() {
     let mutable = true;
 }
 
+</code></pre></pre>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="literals-and-operators"><a class="header" href="#literals-and-operators">Literals and operators</a></h1>
+<p>앞서 말한 스칼라 타입의 값에 해당하는 값들은 리터럴(literal)을 통해 표현할 수 있습니다.</p>
+<p>정수는 16진수(<code>0x</code>), 8진수(<code>0o</code>), 2진수(<code>0b</code>)로 표현될 수 있습니다.</p>
+<p>밑줄(<code>_</code>)은 숫자 리터럴에 있어 가독성을 향상시켜주기 위해 사용합니다. (ex. <code>1_000 == 1000</code>, <code>0.000_001 == 0.000001</code>)</p>
+<p>리터럴을 사용하려면 컴파일러에게 어떤 타입의 리터럴을 사용하는지에 대해 알려주어야 합니다. 지금부터는 unsigned 32-bit integer를 나타내기 위해 <code>u32</code> suffix를 사용하겠습니다.</p>
+<p>Rust에서 사용할 수 있는 연산자와 이들 간의 우선순위는 다른 C형 언어들과 유사합니다. (<a href="https://doc.rust-lang.org/reference/expressions.html#expression-precedence">참조</a>)</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+    // 정수 덧셈
+    println!(&quot;1 + 2 = {}&quot;, 1u32 + 2);
+
+    // 정수 뺄셈
+    println!(&quot;1 - 2 = {}&quot;, 1i32 - 2);
+
+    // Boolean 로직에 대한 Short-circuiting 
+    println!(&quot;true AND false is {}&quot;, true &amp;&amp; false);
+    println!(&quot;true OR false is {}&quot;, true || false);
+    println!(&quot;NOT true is {}&quot;, !true);
+
+    // Bitwise operations
+    println!(&quot;0011 AND 0101 is {:04b}&quot;, 0b0011u32 &amp; 0b0101);
+    println!(&quot;0011 OR 0101 is {:04b}&quot;, 0b0011u32 | 0b0101);
+    println!(&quot;0011 XOR 0101 is {:04b}&quot;, 0b0011u32 ^ 0b0101);
+    println!(&quot;1 &lt;&lt; 5 is {}&quot;, 1u32 &lt;&lt; 5);
+    println!(&quot;0x80 &gt;&gt; 2 is 0x{:x}&quot;, 0x80u32 &gt;&gt; 2);
+
+    // 가독성 향상을 위해 밑줄을 사용
+    println!(&quot;One million is written as {}&quot;, 1_000_000u32);
+}
 </code></pre></pre>
 
                     </main>
