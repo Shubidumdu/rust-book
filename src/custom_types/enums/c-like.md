@@ -2,7 +2,7 @@
 
 `enum`은 C 에서의 enum과 유사하게 사용될 수 있습니다.
 
-```rs
+```rust,editable
 // 사용하지 않은 코드에 대한 경고를 숨깁니다.
 #![allow(dead_code)]
 

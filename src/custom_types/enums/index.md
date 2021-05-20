@@ -2,7 +2,7 @@
 
 `enum` 키워드는 여러 형태 중 하나일 수 있는 타입을 생성하도록 해줍니다. `struct`로서 유효한 변형 형태라면 `enum`에서도 유효합니다.
 
-```rs
+```rust,editable
 // 웹 이벤트를 분류하는 `enum`을 만듭니다.
 // 이벤트 이름과 타입 정보가 변형 형태를 명시합니다.
 // 각각의 변형은 구분되며, 독립적입니다.
@@ -52,7 +52,7 @@ fn main() {
 
 Type aliases(타입 별칭)을 사용한다면, 각각의 enum을 별칭으로 다룰 수 있습니다. enum의 이름이 너무 길거나, 너무 일반적이라서 새로 이름을 짓고자 할때 사용할 수 있습니다.
 
-```rs
+```rust,editable
 enum VeryVerboseEnumOfThingsToDoWithNumbers {
     Add,
     Subtract,
@@ -69,7 +69,7 @@ fn main() {
 
 가장 일반적으로 이를 많이 사용하게 되는 경우는 `impl` 블록에서 `Self` 별칭을 사용하는 경우입니다.
 
-```rs
+```rs,editable
 enum VeryVerboseEnumOfThingsToDoWithNumbers {
     Add,
     Subtract,

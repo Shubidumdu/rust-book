@@ -6,7 +6,7 @@
 - 클래식 C 스트럭처 
 - 유닛 스트럭처, 필드가 없어 제네릭에 유용함
 
-```rs,editable
+```rust,editable
 #[derive(Debug)]
 struct Person {
     name: String,
