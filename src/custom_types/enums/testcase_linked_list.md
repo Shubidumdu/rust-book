@@ -2,7 +2,7 @@
 
 `enums`의 일반적인 용도는 링크드 리스트(linked-list)를 만드는 것입니다.
 
-```rust
+```rust,editable
 use crate::List::*;
 
 enum List {
