@@ -14,3 +14,5 @@
   - [Arrays and Slices](primitives/array.md)
 - [Custom Types](custom_types/index.md)
   - [Structures](custom_types/structs.md)
+  - [Enums](custom_types/enums/index.md)
+  - [use](custom_types/enums/use.md)
