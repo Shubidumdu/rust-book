@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item "><a href="../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="../hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../primitives/literals.html"><strong aria-hidden="true">2.1.</strong> Literals and operators</a></li><li class="chapter-item "><a href="../primitives/tuple.html"><strong aria-hidden="true">2.2.</strong> Tuples</a></li><li class="chapter-item expanded "><a href="../primitives/array.html" class="active"><strong aria-hidden="true">2.3.</strong> Arrays and Slices</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item "><a href="../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="../hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../primitives/literals.html"><strong aria-hidden="true">2.1.</strong> Literals and operators</a></li><li class="chapter-item "><a href="../primitives/tuple.html"><strong aria-hidden="true">2.2.</strong> Tuples</a></li><li class="chapter-item expanded "><a href="../primitives/array.html" class="active"><strong aria-hidden="true">2.3.</strong> Arrays and Slices</a></li></ol></li><li class="chapter-item "><a href="../custom_types/index.html"><strong aria-hidden="true">3.</strong> Custom Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../custom_types/structs.html"><strong aria-hidden="true">3.1.</strong> Structures</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -168,7 +168,7 @@
                         <h1 id="arrays-and-slices"><a class="header" href="#arrays-and-slices">Arrays and Slices</a></h1>
 <p>Array는 동일한 타입의 값들이 모인 컬렉션입니다. 메모리에 연속적으로 저장됩니다. Array는 <code>[]</code> 괄호를 통해 생성되며, 그 길이는 <code>[T; length]</code>와 같은 형태로 작성하여 컴파일링 시점에 알려주어야 합니다.</p>
 <p>Slices는 Array와 유사하지만, 컴파일링 차원에서 그 길이를 파악하지 않습니다. 대신, 슬라이스는 two-word 객체로, 첫번째는 데이터의 포인터를 가리키고, 두번째는 슬라이스의 길이를 나타냅니다. word의 크기는 x86-64의 프로세서 아키텍처(ex. 64bit)에 의해 결정되는 usize와 동일합니다. Slice는 한 Array의 일부를 가져오기 위해 <code>&amp;[T]</code> 형식 선언으로 사용합니다.</p>
-<pre><code class="language-rs">use std::mem;
+<pre><code class="language-rs editable">use std::mem;
 
 // 아래 함수는 Array로부터 Slice를 가져옵니다.
 fn analyze_slice(slice: &amp;[i32]) {
@@ -222,6 +222,10 @@ fn main() {
                         
 
                         
+                            <a rel="next" href="../custom_types/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
 
                         <div style="clear: both"></div>
                     </nav>
@@ -235,6 +239,10 @@ fn main() {
                     </a>
                 
 
+                
+                    <a rel="next" href="../custom_types/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
