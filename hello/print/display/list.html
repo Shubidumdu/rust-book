@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Hello World - Shubidumdu&#x27;s Rust Book</title>
+        <title>Testcase: List - Shubidumdu&#x27;s Rust Book</title>
         
         
 
@@ -18,28 +18,28 @@
         <meta name="theme-color" content="#ffffff" />
 
         
-        <link rel="icon" href="../favicon.svg">
+        <link rel="icon" href="../../../favicon.svg">
         
         
-        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="shortcut icon" href="../../../favicon.png">
         
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
         
-        <link rel="stylesheet" href="../css/print.css" media="print">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
         
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
         
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
         
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -49,7 +49,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "../";
+            var path_to_root = "../../../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../hello/index.html" class="active"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../../../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item expanded "><a href="../../../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item expanded "><a href="../../../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../hello/print/display/list.html" class="active"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -131,7 +131,7 @@
 
                     <div class="right-buttons">
                         
-                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
@@ -165,39 +165,54 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="hello-world"><a class="header" href="#hello-world">Hello, World!</a></h1>
-<pre><pre class="playground"><code class="language-rust editable edition2018">// `//` 혹은 `/* ... */`을 통해 주석을 작성할 수 있습니다.
+                        <h1 id="testcase-list"><a class="header" href="#testcase-list">Testcase: List</a></h1>
+<p>각각의 요소들이 다루어져야 하는 구조에 있어서 <code>fmt::Display</code>를 구현하는 것은 까다롭습니다. <code>write!</code> 매크로는 기본적으로 <code>fmt::Result</code>를 만들어내기 때문에, 모든 결과들을 한번에 처리하여 반환해야 한다는 문제가 있습니다. Rust는 이런 경우를 위해 <code>?</code> 연산자를 제공합니다.</p>
+<p>아래와 같은 형태로 <code>?</code> 연산자를 사용할 수 있습니다. 아래의 코드는 <code>write!</code>를 시도하고, 에러가 발생한다면 에러를 반환하고, 그렇지 않다면 계속 진행한다는 것을 의미합니다.</p>
+<pre><code class="language-rust ignore">write!(f, &quot;{}&quot;, value)?;
+</code></pre>
+<p>이것을 사용하면, <code>Vec</code> 구조에 대한 <code>fmt::Display</code>도 직관적으로 구현할 수 있습니다.</p>
+<pre><pre class="playground"><code class="language-rust edition2018">use std::fmt;
 
-/*
-  이는 컴파일링 단계에서 무시됩니다.
-*/
+// Vec를 갖는 List란 이름의 구조를 정의
+struct List(Vec&lt;i32&gt;);
+
+impl fmt::Display for List {
+  fn fmt(&amp;self, f: &amp;mut fmt::Formatter) -&gt; fmt::Result {
+    // 튜플 인덱싱을 통해 값을 가져옵니다.
+    // 이후 `vec`이라는 이름으로 참조를 만듭니다.
+    let vec = &amp;self.0;
+
+    write!(f, &quot;[&quot;)?;
+
+    // `vec` 의 요소들에 대해 인덱스(`index`)와 값(`v`)을 순회합니다.
+    for (index, v) in vec.iter().enumerate() {
+      // 첫번째 요소가 아닌 경우(`index != 0`) `,`를 제외합니다.
+      // `?` 연산자를 통해 계속 진행합니다.
+      if index != 0 { write!(f, &quot;, &quot;)?; }
+      write!(f, &quot;{}&quot;, v)?;
+    }
+
+    // 열려있던 괄호를 닫고 `fmt::Result` 값을 반환합니다.
+    write!(f, &quot;]&quot;)
+  }
+}
 
 fn main() {
-  println!(&quot;Hello World!&quot;);
+  let v = List(vec![1, 2, 3]);
+  println!(&quot;{}&quot;, v);
 }
 </code></pre></pre>
-<p>Rust는 다음 명령을 통해 파일을 바이너리로 컴파일링합니다.</p>
-<pre><code class="language-bash">$ rustc &lt;path&gt;
-</code></pre>
-<p>컴파일 이후, 컴파일된 파일(확장자가 없음)을 실행하여 프로그램을 확인할 수 있습니다.</p>
-<pre><code class="language-bash">$ ./hello
-Hello World!
-</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../../hello/print/display/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="../hello/comment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -207,15 +222,11 @@ Hello World!
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../../hello/print/display/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="../hello/comment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
@@ -234,22 +245,22 @@ Hello World!
         
 
         
-        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         
 
         
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
