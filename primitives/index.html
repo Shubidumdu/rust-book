@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Comments - Shubidumdu&#x27;s Rust Book</title>
+        <title>Primitives - Shubidumdu&#x27;s Rust Book</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../hello/comment.html" class="active"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="../hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item "><a href="../primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item "><a href="../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="../hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../primitives/index.html" class="active"><strong aria-hidden="true">2.</strong> Primitives</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -165,40 +165,66 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="comments"><a class="header" href="#comments">Comments</a></h1>
-<p><code>//</code> 혹은 <code>/* ... */</code>을 통해 코멘트를 작성할 수 있습니다.</p>
-<pre><pre class="playground"><code class="language-rust edition2018">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>// 한줄 주석
-/*
-  여러 줄 주석
-*/
-<span class="boring">}
-</span></code></pre></pre>
-<p>이는 컴파일러에 의해 무시됩니다.</p>
-<p>Rust에서는 Expression 한 가운데에 주석이 껴있어도 문제가 없습니다.</p>
-<pre><pre class="playground"><code class="language-rust editable edition2018"> fn main() {
-    let x = 5 + /* 90 + */ 5;
-    println!(&quot;Is `x` 10 or 100? x = {}&quot;, x);
- }
+                        <h1 id="primitives"><a class="header" href="#primitives">Primitives</a></h1>
+<p>Rust는 다양한 형태의 <code>primitives</code>를 제공합니다.</p>
+<h3 id="스칼라-타입-scalar-types"><a class="header" href="#스칼라-타입-scalar-types">스칼라 타입 (Scalar Types)</a></h3>
+<ul>
+<li>signed integers : <code>i8</code>, <code>i16</code>, <code>i32</code>, <code>i64</code>, <code>i128</code>, <code>isize</code> (포인터 사이즈)</li>
+<li>unsigned integers : <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code>, <code>u128</code>, <code>usize</code> (포인터 사이즈)</li>
+<li>floating point : <code>f32</code>, <code>f64</code></li>
+<li><code>char</code> : 유니코드 스칼라값, 각각 4byte (<code>a</code>, <code>α</code>, <code>∞</code> 등)</li>
+<li><code>bool</code> : <code>true</code> 혹은 <code>false</code></li>
+<li><code>()</code> : 유닛타입. 빈 튜플.</li>
+</ul>
+<p><code>()</code>은 튜플임에도 불구하고, 아무 값도 포함하지 않기 때문에 컴파운드(복합) 타입으로 고려되지 않습니다.</p>
+<h3 id="컴파운드-타입-compound-types"><a class="header" href="#컴파운드-타입-compound-types">컴파운드 타입 (Compound Types)</a></h3>
+<ul>
+<li>arrays : <code>[1, 2, 3]</code></li>
+<li>tuples : <code>(1, true)</code></li>
+</ul>
+<p>변수들은 항상 타입이 지정됩니다. 숫자 타입들은 <em>suffix</em>를 통해 직접 타입을 지정하거나, 기본적으로 지정됩니다. (<code>int</code>는 <code>i32</code>로, <code>float</code>는 <code>f64</code>로) 또한 Rust는 컨텍스트를 통해 타입을 추측하기도 합니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+    // 변수는 타입이 지정될 수 있습니다.
+    let logical: bool = true;
+
+    // 일반적인 타입 지정
+    let a_float: f64 = 1.0;
+    // suffix 타입 지정 -&gt; `i32` 타입의 `5`
+    let an_integer   = 5i32; // Suffix annotation
+
+    // 기본 타입 지정
+    let default_float   = 3.0; // `f64`
+    let default_integer = 7;   // `i32`
+    
+    // Context에 따라 타입이 지정될 수도 있습니다. 
+    let mut inferred_type = 12; 
+    // 아래에서의 i64로 타입이 지정됩니다.
+    inferred_type = 4294967296i64;
+    
+    // `mut`을 통해 `mutable`로 지정한 변수는 변경될 수 있습니다.
+    let mut mutable = 12; // Mutable `i32`
+    mutable = 21;
+    
+    // 단, 타입을 유지해야 합니다.
+    // 아래는 에러가 출력됩니다.
+    mutable = true;
+    
+    // 섀도잉(shadowing)을 통해 덮어쓸수도 있습니다.
+    let mutable = true;
+}
+
 </code></pre></pre>
-<p><code>///</code>와 <code>//!</code>는 Doc Comment라고 하며, 이에 대해선 추후에 다루겠습니다.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../hello/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../hello/print/formatting.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="../hello/print/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -208,15 +234,11 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../hello/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../hello/print/formatting.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="../hello/print/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
