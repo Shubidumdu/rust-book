@@ -20,3 +20,7 @@
     - [Testcase: linked-list](custom_types/enums/testcase_linked_list.md)
   - [constants](custom_types/constants.md)
 - [Variable Bindings](variable_bindings/index.md)
+  - [Mutability](variable_bindings/mut.md)
+  - [Scope and Shadowing](variable_bindings/scope.md)
+  - [Declare first](variable_bindings/declare.md)
+  - [Freezing](variable_bindings/feezing.md)
