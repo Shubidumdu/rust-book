@@ -29,3 +29,7 @@
   - [Literals](types/literals.md)
   - [Inference](types/inference.md)
   - [Aliasing](types/aliasing.md)
+- [Conversion](conversion/index.md)
+  - [From and Into](conversion/from_into.md)
+  - [TryFrom and TryInto](conversion/conversion.md)
+  - [To and from Strings](conversion/string.md)
