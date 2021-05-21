@@ -1311,6 +1311,32 @@ fn main() {
 
 </code></pre></pre>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="literals"><a class="header" href="#literals">Literals</a></h1>
+<p>숫자 리터럴은 타입을 suffix(접미사)로 추가하여 타입을 지정할 수 있습니다. 예를 들어, <code>42</code> 리터럴에 대해 <code>42i32</code>로 작성하여 <code>i32</code> 타입을 갖도록 할 수 있습니다.</p>
+<p>suffix가 없는 숫자 리터럴의 경우 해당 리터럴이 어떻게 사용되느냐에 따라 타입이 다르게 고려됩니다. 별도의 제약이 없다면, 컴파일러는 기본적으로 정수에 대해서는 <code>i32</code>로, 부동소수점 수에 대해서는 <code>f64</code> 타입이 적용됩니다.</p>
+<pre><pre class="playground"><code class="language-rust edition2018">fn main() {
+    // 리터럴에 suffix가 붙으면,
+    // 초기화 시점에 해당 타입을 알 수 있습니다.
+    let x = 1u8;
+    let y = 2u32;
+    let z = 3f32;
+
+    // suffix가 없는 리터럴의 경우,
+    // 이들의 타입은 어떻게 사용되었느냐에 따라 달라집니다.
+    let i = 1;
+    let f = 1.0;
+
+    // `size_of_val`은 변수의 사이즈를 bytes로 반환합니다.
+    println!(&quot;size of `x` in bytes: {}&quot;, std::mem::size_of_val(&amp;x));
+    println!(&quot;size of `y` in bytes: {}&quot;, std::mem::size_of_val(&amp;y));
+    println!(&quot;size of `z` in bytes: {}&quot;, std::mem::size_of_val(&amp;z));
+    println!(&quot;size of `i` in bytes: {}&quot;, std::mem::size_of_val(&amp;i));
+    println!(&quot;size of `f` in bytes: {}&quot;, std::mem::size_of_val(&amp;f));
+}
+</code></pre></pre>
+<p>위의 코드에서 설명하지 않은 부분이 있습니다.</p>
+<ul>
+<li><code>std::mem::size_of_val</code>는 <em>full path</em>를 통해 호출된 함수입니다. 코드는 **모듈(module)**이라고 부르는 로직 단위로 쪼개질 수 있습니다. 위의 경우, <code>size_of_val</code> 함수는 <code>mem</code> 모듈에서 정의된 것이며, 그 <code>mem</code> 모듈은 <code>std</code> 크레이트로부터 정의된 것입니다. 더 자세한 내용에 대해서는 추후에 설명하도록 하겠습니다.</li>
+</ul>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="inference"><a class="header" href="#inference">Inference</a></h1>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="aliasing"><a class="header" href="#aliasing">Aliasing</a></h1>
 
