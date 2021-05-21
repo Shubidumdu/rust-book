@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="index.html">Introduction</a></li><li class="chapter-item "><a href="hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item "><a href="primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="primitives/literals.html"><strong aria-hidden="true">2.1.</strong> Literals and operators</a></li><li class="chapter-item "><a href="primitives/tuple.html"><strong aria-hidden="true">2.2.</strong> Tuples</a></li><li class="chapter-item "><a href="primitives/array.html"><strong aria-hidden="true">2.3.</strong> Arrays and Slices</a></li></ol></li><li class="chapter-item "><a href="custom_types/index.html"><strong aria-hidden="true">3.</strong> Custom Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="custom_types/structs.html"><strong aria-hidden="true">3.1.</strong> Structures</a></li><li class="chapter-item "><a href="custom_types/enums/index.html"><strong aria-hidden="true">3.2.</strong> Enums</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="custom_types/enums/use.html"><strong aria-hidden="true">3.2.1.</strong> use</a></li><li class="chapter-item "><a href="custom_types/enums/c-like.html"><strong aria-hidden="true">3.2.2.</strong> C-like</a></li><li class="chapter-item "><a href="custom_types/enums/testcase_linked_list.html"><strong aria-hidden="true">3.2.3.</strong> Testcase: linked-list</a></li></ol></li><li class="chapter-item "><a href="custom_types/constants.html"><strong aria-hidden="true">3.3.</strong> constants</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="index.html">Introduction</a></li><li class="chapter-item "><a href="hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item "><a href="primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="primitives/literals.html"><strong aria-hidden="true">2.1.</strong> Literals and operators</a></li><li class="chapter-item "><a href="primitives/tuple.html"><strong aria-hidden="true">2.2.</strong> Tuples</a></li><li class="chapter-item "><a href="primitives/array.html"><strong aria-hidden="true">2.3.</strong> Arrays and Slices</a></li></ol></li><li class="chapter-item "><a href="custom_types/index.html"><strong aria-hidden="true">3.</strong> Custom Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="custom_types/structs.html"><strong aria-hidden="true">3.1.</strong> Structures</a></li><li class="chapter-item "><a href="custom_types/enums/index.html"><strong aria-hidden="true">3.2.</strong> Enums</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="custom_types/enums/use.html"><strong aria-hidden="true">3.2.1.</strong> use</a></li><li class="chapter-item "><a href="custom_types/enums/c-like.html"><strong aria-hidden="true">3.2.2.</strong> C-like</a></li><li class="chapter-item "><a href="custom_types/enums/testcase_linked_list.html"><strong aria-hidden="true">3.2.3.</strong> Testcase: linked-list</a></li></ol></li><li class="chapter-item "><a href="custom_types/constants.html"><strong aria-hidden="true">3.3.</strong> constants</a></li></ol></li><li class="chapter-item "><a href="variable_bindings/index.html"><strong aria-hidden="true">4.</strong> Variable Bindings</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -1086,6 +1086,26 @@ fn main() {
 
     // ERROR! : `const`로 지정한 변수는 변경할 수 없습니다.
     THRESHOLD = 5;
+}
+</code></pre></pre>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="variable-bindings"><a class="header" href="#variable-bindings">Variable Bindings</a></h1>
+<p>Rust는 정적 타이핑을 통해 안정성을 보장합니다. 변수 바인딩은 선언 시에 타입이 지정될 수 있습니다. 그러나, 대부분의 경우 컴파일러는 컨텍스트를 통해 변수의 타입을 추측할 수 있으므로, 일일이 정적 타이핑을 해주는 것에 대한 부담이 줄어듭니다.</p>
+<p>리터럴 등을 통해 생성해내는 값들은 변수에 바인딩될 수 있으며, 이 때는 <code>let</code> 바인딩을 사용합니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+    let an_integer = 1u32;
+    let a_boolean = true;
+    let unit = ();
+
+    // an_integer를 copied_integer에 복사합니다.
+    let copied_integer = an_integer;
+
+    println!(&quot;An integer: {:?}&quot;, copied_integer);
+    println!(&quot;A boolean: {:?}&quot;, a_boolean);
+    println!(&quot;Meet the unit value: {:?}&quot;, unit);
+
+    // 컴파일러는 사용되지 않은 변수에 대해서는 경고합니다.
+    // 이 경우, 변수명 앞에 `_`를 붙여 막을 수 있습니다.
+    let _unused_variable = 3u32;
 }
 </code></pre></pre>
 
