@@ -2,7 +2,7 @@
 
 변수 바인딩은 기본적으로 immutable 합니다. 그러나, `mut` 수식어를 덧붙여 오버라이딩이 가능하도록 할 수 있습니다.
 
-```rust
+```rust,editable
 fn main() {
     let _immutable_binding = 1;
     let mut mutable_binding = 1;
