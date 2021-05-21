@@ -166,6 +166,46 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="scope-and-shadowing"><a class="header" href="#scope-and-shadowing">Scope and Shadowing</a></h1>
+<p>변수 바인딩은 스코프를 가지며, 하나의 블록 영역 내에서만 사용됩니다. 블록은 <code>{}</code> 괄호로 둘러싸인 statement의 컬렉션입니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+    // 아래 바인딩은 `main` 함수에 종속됩니다.
+    let long_lived_binding = 1;
+
+    // 블록을 통해 직접 스코프를 만들 수 있습니다.
+    {
+        // 따라서 아래 바인딩은 해당 스코프에서만 유효합니다.
+        let short_lived_binding = 2;
+
+        println!(&quot;inner short: {}&quot;, short_lived_binding);
+    }
+
+    // 위의 블록 내에서 선언한 바인딩은 바깥에서는 유효하지 않습니다.
+    // 따라서 아래의 코드는 에러가 발생합니다.
+    println!(&quot;outer short: {}&quot;, short_lived_binding);
+
+    // 아래는 유효한 범위 내에 있으므로 정상적으로 출력됩니다.
+    println!(&quot;outer long: {}&quot;, long_lived_binding);
+}
+</code></pre></pre>
+<p>Variable Shadowing도 가능합니다. </p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+    let shadowed_binding = 1;
+
+    {
+        println!(&quot;before being shadowed: {}&quot;, shadowed_binding);
+
+        // 바깥의 바인딩을 Shadowing합니다.
+        let shadowed_binding = &quot;abc&quot;;
+
+        println!(&quot;shadowed in inner block: {}&quot;, shadowed_binding);
+    }
+    println!(&quot;outside inner block: {}&quot;, shadowed_binding);
+
+    // 최상단의 바인딩에 대해 Shadowing합니다.
+    let shadowed_binding = 2;
+    println!(&quot;shadowed in outer block: {}&quot;, shadowed_binding);
+}
+</code></pre></pre>
 
                     </main>
 
