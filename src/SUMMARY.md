@@ -19,3 +19,4 @@
     - [C-like](custom_types/enums/c-like.md)
     - [Testcase: linked-list](custom_types/enums/testcase_linked_list.md)
   - [constants](custom_types/constants.md)
+- [Variable Bindings](variable_bindings/index.md)
