@@ -24,3 +24,8 @@
   - [Scope and Shadowing](variable_bindings/scope.md)
   - [Declare first](variable_bindings/declare.md)
   - [Freezing](variable_bindings/feezing.md)
+- [Types](types/index.md)
+  - [Casting](types/casting.md)
+  - [Literals](types/literals.md)
+  - [Inference](types/inference.md)
+  - [Aliasing](types/aliasing.md)
