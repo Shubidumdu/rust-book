@@ -1339,7 +1339,7 @@ fn main() {
 </ul>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="inference"><a class="header" href="#inference">Inference</a></h1>
 <p>타입 추론 엔진은 제법 똑똑합니다. 엔진은 단순히 초기화 시점 만으로 타입을 판단하지 않습니다. 초기화 이후에 변수를 어떻게 사용하는지를 보며, 이를 통해 타입을 유추합니다. 아래는 타입 추론의 심화 예제입니다.</p>
-<pre><pre class="playground"><code class="language-rust edition2018">fn main() {
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
     // suffix 덕분에, 컴파일러는 `elem`의 타입을 알 수 있습니다.
     let elem = 5u8;
 
@@ -1363,6 +1363,30 @@ fn main() {
 </code></pre></pre>
 <p>위에서 <code>vec</code>에 대한 별다른 타입 지정이 없었지만 컴파일링은 정상적으로 진행됩니다! :)</p>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="aliasing"><a class="header" href="#aliasing">Aliasing</a></h1>
+<p><code>type</code> 문은 기존 타입에 새로운 이름을 부여할 수 있습니다. 타입은 반드시 <code>UpperCamelCase</code>로 쓰여야 하고, 그렇지 않으면 경고를 출력합니다. 원시 타입의 경우는 예외입니다. (<code>usize</code>, <code>f32</code> 등)</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">// `NanoSecond`는 `u64`의 새로운 타입명입니다.
+type NanoSecond = u64;
+type Inch = u64;
+
+// camel case로 작성하지 않으면 경고가 출력됩니다.
+// 다만 아래에서는 어트리뷰트를 통해 이를 무시합니다.
+#[allow(non_camel_case_types)]
+type u64_t = u64;
+
+fn main() {
+    // `NanoSecond` = `Inch` = `u64_t` = `u64`.
+    let nanoseconds: NanoSecond = 5 as u64_t;
+    let inches: Inch = 2 as u64_t;
+
+    // 결국, 타입 별칭은 추가로 타입 안정성을 제공하는 기능이 아닙니다.
+    // 별칭은 새로운 타입이 아닙니다.
+    println!(&quot;{} nanoseconds + {} inches = {} unit?&quot;,
+             nanoseconds,
+             inches,
+             nanoseconds + inches);
+}
+</code></pre></pre>
+<p>타입 별칭의 주된 사용은 보일러플레이트를 줄이기 위함입니다. 예를 들어, <code>Result&lt;T, IoError&gt;</code>의 별칭으로 <code>IoResult&lt;T&gt;</code> 타입을 사용할 수 있습니다.</p>
 
                     </main>
 

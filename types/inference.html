@@ -167,7 +167,7 @@
                     <main>
                         <h1 id="inference"><a class="header" href="#inference">Inference</a></h1>
 <p>타입 추론 엔진은 제법 똑똑합니다. 엔진은 단순히 초기화 시점 만으로 타입을 판단하지 않습니다. 초기화 이후에 변수를 어떻게 사용하는지를 보며, 이를 통해 타입을 유추합니다. 아래는 타입 추론의 심화 예제입니다.</p>
-<pre><pre class="playground"><code class="language-rust edition2018">fn main() {
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
     // suffix 덕분에, 컴파일러는 `elem`의 타입을 알 수 있습니다.
     let elem = 5u8;
 
