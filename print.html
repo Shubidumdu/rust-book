@@ -1224,7 +1224,7 @@ fn main() {
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="casting"><a class="header" href="#casting">Casting</a></h1>
 <p>Rust는 원시 타입 간의 암묵적인 타입 변환을 제공하지 않습니다. 허나 <code>as</code> 키워드를 통한 명시적 타입 변환을 적용할 수 있습니다.</p>
 <p>유형 간의 변환 규칙은 일반적으로 C에 정의되지 않은 동작이 있는 경우를 제외하고는 C에서의 규칙을 따릅니다. 타입 간의 모든 변환 동작에 대해서는 Rust 내에 잘 정의되어 있습니다.</p>
-<pre><pre class="playground"><code class="language-rust edition2018">// 오버플로되는 캐스트에 대한 경고를 표시하지 않게끔 합니다.
+<pre><pre class="playground"><code class="language-rust editable edition2018">// 오버플로되는 캐스트에 대한 경고를 표시하지 않게끔 합니다.
 #![allow(overflowing_literals)]
 
 fn main() {
@@ -1313,7 +1313,7 @@ fn main() {
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="literals"><a class="header" href="#literals">Literals</a></h1>
 <p>숫자 리터럴은 타입을 suffix(접미사)로 추가하여 타입을 지정할 수 있습니다. 예를 들어, <code>42</code> 리터럴에 대해 <code>42i32</code>로 작성하여 <code>i32</code> 타입을 갖도록 할 수 있습니다.</p>
 <p>suffix가 없는 숫자 리터럴의 경우 해당 리터럴이 어떻게 사용되느냐에 따라 타입이 다르게 고려됩니다. 별도의 제약이 없다면, 컴파일러는 기본적으로 정수에 대해서는 <code>i32</code>로, 부동소수점 수에 대해서는 <code>f64</code> 타입이 적용됩니다.</p>
-<pre><pre class="playground"><code class="language-rust edition2018">fn main() {
+<pre><pre class="playground"><code class="language-rust eitable edition2018">fn main() {
     // 리터럴에 suffix가 붙으면,
     // 초기화 시점에 해당 타입을 알 수 있습니다.
     let x = 1u8;
@@ -1338,6 +1338,30 @@ fn main() {
 <li><code>std::mem::size_of_val</code>는 <em>full path</em>를 통해 호출된 함수입니다. 코드는 **모듈(module)**이라고 부르는 로직 단위로 쪼개질 수 있습니다. 위의 경우, <code>size_of_val</code> 함수는 <code>mem</code> 모듈에서 정의된 것이며, 그 <code>mem</code> 모듈은 <code>std</code> 크레이트로부터 정의된 것입니다. 더 자세한 내용에 대해서는 추후에 설명하도록 하겠습니다.</li>
 </ul>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="inference"><a class="header" href="#inference">Inference</a></h1>
+<p>타입 추론 엔진은 제법 똑똑합니다. 엔진은 단순히 초기화 시점 만으로 타입을 판단하지 않습니다. 초기화 이후에 변수를 어떻게 사용하는지를 보며, 이를 통해 타입을 유추합니다. 아래는 타입 추론의 심화 예제입니다.</p>
+<pre><pre class="playground"><code class="language-rust edition2018">fn main() {
+    // suffix 덕분에, 컴파일러는 `elem`의 타입을 알 수 있습니다.
+    let elem = 5u8;
+
+    // 비어있는 벡터 구조를 생성합니다.
+    // 벡터는 가변적인 길이를 가진 Array입니다.
+    let mut vec = Vec::new();
+    // 현 시점에서, 컴파일러는 `vec`의 타입을 정확히 모릅니다.
+    // 당장에 `vec`이 벡터라는 것만을 알고 있습니다.
+
+    // 생성한 벡터에 `elem`을 삽입합니다.
+    vec.push(elem);
+
+    // 아하! 이제야 컴파일러는 `vec`가 `u8` 타입을
+    // 담고있는 벡터임을 알 수 있습니다.
+
+    // 만약, `vec.push(elem)`이 없다면,
+    // 명확한 타입 추론이 불가능하기 때문에
+    // 컴파일 에러가 발생합니다.
+    println!(&quot;{:?}&quot;, vec);
+}
+</code></pre></pre>
+<p>위에서 <code>vec</code>에 대한 별다른 타입 지정이 없었지만 컴파일링은 정상적으로 진행됩니다! :)</p>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="aliasing"><a class="header" href="#aliasing">Aliasing</a></h1>
 
                     </main>
