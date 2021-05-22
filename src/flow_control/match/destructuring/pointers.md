@@ -5,7 +5,7 @@
 - 역참조(Dereference)는 `*`를 사용합니다.
 - 분해(Destructuring)은 `&`, `ref`, 그리고 `ref mut`를 사용합니다.
 
-```rust
+```rust,editable
 fn main() {
     // `i32` 타입의 레퍼런스를 할당합니다.
     // `&`는 할당된 참조가 존재함을 나타냅니다.
