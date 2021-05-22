@@ -2,7 +2,7 @@
 
 - 튜플은 `match`를 통해 분해될 수 있습니다.
 
-```rust
+```rust,editable
 fn main() {
     let triple = (0, -2, 3);
 
