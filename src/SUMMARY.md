@@ -49,3 +49,5 @@
       - [structs](flow_control/match/destructuring/structs.md)
     - [Guards](flow_control/match/guards.md)
     - [Binding](flow_control/match/binding.md)
+  - [if let](flow_control/if_let.md)
+  - [while let](flow_control/while_let.md)
