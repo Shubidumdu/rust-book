@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Arrays and Slices - Shubidumdu&#x27;s Rust Book</title>
+        <title>while - Shubidumdu&#x27;s Rust Book</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item "><a href="../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="../hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../primitives/literals.html"><strong aria-hidden="true">2.1.</strong> Literals and operators</a></li><li class="chapter-item "><a href="../primitives/tuple.html"><strong aria-hidden="true">2.2.</strong> Tuples</a></li><li class="chapter-item expanded "><a href="../primitives/array.html" class="active"><strong aria-hidden="true">2.3.</strong> Arrays and Slices</a></li></ol></li><li class="chapter-item "><a href="../custom_types/index.html"><strong aria-hidden="true">3.</strong> Custom Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../custom_types/structs.html"><strong aria-hidden="true">3.1.</strong> Structures</a></li><li class="chapter-item "><a href="../custom_types/enums/index.html"><strong aria-hidden="true">3.2.</strong> Enums</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../custom_types/enums/use.html"><strong aria-hidden="true">3.2.1.</strong> use</a></li><li class="chapter-item "><a href="../custom_types/enums/c-like.html"><strong aria-hidden="true">3.2.2.</strong> C-like</a></li><li class="chapter-item "><a href="../custom_types/enums/testcase_linked_list.html"><strong aria-hidden="true">3.2.3.</strong> Testcase: linked-list</a></li></ol></li><li class="chapter-item "><a href="../custom_types/constants.html"><strong aria-hidden="true">3.3.</strong> constants</a></li></ol></li><li class="chapter-item "><a href="../variable_bindings/index.html"><strong aria-hidden="true">4.</strong> Variable Bindings</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../variable_bindings/mut.html"><strong aria-hidden="true">4.1.</strong> Mutability</a></li><li class="chapter-item "><a href="../variable_bindings/scope.html"><strong aria-hidden="true">4.2.</strong> Scope and Shadowing</a></li><li class="chapter-item "><a href="../variable_bindings/declare.html"><strong aria-hidden="true">4.3.</strong> Declare first</a></li><li class="chapter-item "><a href="../variable_bindings/feezing.html"><strong aria-hidden="true">4.4.</strong> Freezing</a></li></ol></li><li class="chapter-item "><a href="../types/index.html"><strong aria-hidden="true">5.</strong> Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../types/casting.html"><strong aria-hidden="true">5.1.</strong> Casting</a></li><li class="chapter-item "><a href="../types/literals.html"><strong aria-hidden="true">5.2.</strong> Literals</a></li><li class="chapter-item "><a href="../types/inference.html"><strong aria-hidden="true">5.3.</strong> Inference</a></li><li class="chapter-item "><a href="../types/aliasing.html"><strong aria-hidden="true">5.4.</strong> Aliasing</a></li></ol></li><li class="chapter-item "><a href="../conversion/index.html"><strong aria-hidden="true">6.</strong> Conversion</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../conversion/from_into.html"><strong aria-hidden="true">6.1.</strong> From and Into</a></li><li class="chapter-item "><a href="../conversion/try_from_try_into.html"><strong aria-hidden="true">6.2.</strong> TryFrom and TryInto</a></li><li class="chapter-item "><a href="../conversion/string.html"><strong aria-hidden="true">6.3.</strong> To and from Strings</a></li></ol></li><li class="chapter-item "><a href="../expressions/index.html"><strong aria-hidden="true">7.</strong> Expressions</a></li><li class="chapter-item "><a href="../flow_control/index.html"><strong aria-hidden="true">8.</strong> Flow of Control</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../flow_control/if_else.html"><strong aria-hidden="true">8.1.</strong> if/else</a></li><li class="chapter-item "><a href="../flow_control/loop/index.html"><strong aria-hidden="true">8.2.</strong> Loop</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../flow_control/loop/nested.html"><strong aria-hidden="true">8.2.1.</strong> Nesting and labels</a></li><li class="chapter-item "><a href="../flow_control/loop/return.html"><strong aria-hidden="true">8.2.2.</strong> Returning from loops</a></li></ol></li><li class="chapter-item "><a href="../flow_control/while.html"><strong aria-hidden="true">8.3.</strong> while</a></li><li class="chapter-item "><a href="../flow_control/for.html"><strong aria-hidden="true">8.4.</strong> for and range</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item "><a href="../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="../hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item "><a href="../primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../primitives/literals.html"><strong aria-hidden="true">2.1.</strong> Literals and operators</a></li><li class="chapter-item "><a href="../primitives/tuple.html"><strong aria-hidden="true">2.2.</strong> Tuples</a></li><li class="chapter-item "><a href="../primitives/array.html"><strong aria-hidden="true">2.3.</strong> Arrays and Slices</a></li></ol></li><li class="chapter-item "><a href="../custom_types/index.html"><strong aria-hidden="true">3.</strong> Custom Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../custom_types/structs.html"><strong aria-hidden="true">3.1.</strong> Structures</a></li><li class="chapter-item "><a href="../custom_types/enums/index.html"><strong aria-hidden="true">3.2.</strong> Enums</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../custom_types/enums/use.html"><strong aria-hidden="true">3.2.1.</strong> use</a></li><li class="chapter-item "><a href="../custom_types/enums/c-like.html"><strong aria-hidden="true">3.2.2.</strong> C-like</a></li><li class="chapter-item "><a href="../custom_types/enums/testcase_linked_list.html"><strong aria-hidden="true">3.2.3.</strong> Testcase: linked-list</a></li></ol></li><li class="chapter-item "><a href="../custom_types/constants.html"><strong aria-hidden="true">3.3.</strong> constants</a></li></ol></li><li class="chapter-item "><a href="../variable_bindings/index.html"><strong aria-hidden="true">4.</strong> Variable Bindings</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../variable_bindings/mut.html"><strong aria-hidden="true">4.1.</strong> Mutability</a></li><li class="chapter-item "><a href="../variable_bindings/scope.html"><strong aria-hidden="true">4.2.</strong> Scope and Shadowing</a></li><li class="chapter-item "><a href="../variable_bindings/declare.html"><strong aria-hidden="true">4.3.</strong> Declare first</a></li><li class="chapter-item "><a href="../variable_bindings/feezing.html"><strong aria-hidden="true">4.4.</strong> Freezing</a></li></ol></li><li class="chapter-item "><a href="../types/index.html"><strong aria-hidden="true">5.</strong> Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../types/casting.html"><strong aria-hidden="true">5.1.</strong> Casting</a></li><li class="chapter-item "><a href="../types/literals.html"><strong aria-hidden="true">5.2.</strong> Literals</a></li><li class="chapter-item "><a href="../types/inference.html"><strong aria-hidden="true">5.3.</strong> Inference</a></li><li class="chapter-item "><a href="../types/aliasing.html"><strong aria-hidden="true">5.4.</strong> Aliasing</a></li></ol></li><li class="chapter-item "><a href="../conversion/index.html"><strong aria-hidden="true">6.</strong> Conversion</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../conversion/from_into.html"><strong aria-hidden="true">6.1.</strong> From and Into</a></li><li class="chapter-item "><a href="../conversion/try_from_try_into.html"><strong aria-hidden="true">6.2.</strong> TryFrom and TryInto</a></li><li class="chapter-item "><a href="../conversion/string.html"><strong aria-hidden="true">6.3.</strong> To and from Strings</a></li></ol></li><li class="chapter-item "><a href="../expressions/index.html"><strong aria-hidden="true">7.</strong> Expressions</a></li><li class="chapter-item expanded "><a href="../flow_control/index.html"><strong aria-hidden="true">8.</strong> Flow of Control</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../flow_control/if_else.html"><strong aria-hidden="true">8.1.</strong> if/else</a></li><li class="chapter-item "><a href="../flow_control/loop/index.html"><strong aria-hidden="true">8.2.</strong> Loop</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../flow_control/loop/nested.html"><strong aria-hidden="true">8.2.1.</strong> Nesting and labels</a></li><li class="chapter-item "><a href="../flow_control/loop/return.html"><strong aria-hidden="true">8.2.2.</strong> Returning from loops</a></li></ol></li><li class="chapter-item expanded "><a href="../flow_control/while.html" class="active"><strong aria-hidden="true">8.3.</strong> while</a></li><li class="chapter-item "><a href="../flow_control/for.html"><strong aria-hidden="true">8.4.</strong> for and range</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -165,64 +165,42 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="arrays-and-slices"><a class="header" href="#arrays-and-slices">Arrays and Slices</a></h1>
-<p>Array는 동일한 타입의 값들이 모인 컬렉션입니다. 메모리에 연속적으로 저장됩니다. Array는 <code>[]</code> 괄호를 통해 생성되며, 그 길이는 <code>[T; length]</code>와 같은 형태로 작성하여 컴파일링 시점에 알려주어야 합니다.</p>
-<p>Slices는 Array와 유사하지만, 컴파일링 차원에서 그 길이를 파악하지 않습니다. 대신, 슬라이스는 two-word 객체로, 첫번째는 데이터의 포인터를 가리키고, 두번째는 슬라이스의 길이를 나타냅니다. word의 크기는 x86-64의 프로세서 아키텍처(ex. 64bit)에 의해 결정되는 usize와 동일합니다. Slice는 한 Array의 일부를 가져오기 위해 <code>&amp;[T]</code> 형식 선언으로 사용합니다.</p>
-<pre><code class="language-rs editable">use std::mem;
+                        <h1 id="while"><a class="header" href="#while">while</a></h1>
+<p><code>while</code> 키워드는 주어진 조건이 <code>true</code>인 경우에 루프를 실행합니다.</p>
+<p><em>FizzBuzz</em> 문제를 <code>while</code>을 통해서 해결해보자.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+    let mut n = 1;
 
-// 아래 함수는 Array로부터 Slice를 가져옵니다.
-fn analyze_slice(slice: &amp;[i32]) {
-  println!(&quot;first element of the slice: {}&quot;, slice[0]);
-  println!(&quot;the slice has {} elements&quot;, slice.len());
+    // n이 101 미만인 동안만 루프가 실행됩니다.
+    while n &lt; 101 {
+        if n % 15 == 0 {
+            println!(&quot;fizzbuzz&quot;);
+        } else if n % 3 == 0 {
+            println!(&quot;fizz&quot;);
+        } else if n % 5 == 0 {
+            println!(&quot;buzz&quot;);
+        } else {
+            println!(&quot;{}&quot;, n);
+        }
+
+        // n을 1씩 더합니다.
+        n += 1;
+    }
 }
-
-fn main() {
-  // 고정 사이즈 Array
-  // 별도로 타입 선언이 없어도 됩니다.
-  let xs: [i32; 5] = [1, 2, 3, 4, 5];
-
-  // 모든 요소가 동일한 값(여기서는 `0`)으로 초기화할 수 있습니다.
-  let ys: [i32; 500] = [0; 500];
-
-  // 인덱싱은 `0`에서 시작합니다.
-  println!(&quot;first element of the array: {}&quot;, xs[0]);
-  println!(&quot;second element of the array: {}&quot;, xs[1]);
-
-  // `len`은 Array의 요소 갯수를 반환합니다.
-  println!(&quot;number of elements in array: {}&quot;, xs.len());
-
-  // Array는 스택에 할당됩니다.
-  println!(&quot;array occupies {} bytes&quot;, mem::size_of_val(&amp;xs));
-
-  // 기본적으로 모든 Array는
-  // Slice로 제공될 수 있습니다.
-  println!(&quot;borrow the whole array as a slice&quot;);
-  analyze_slice(&amp;xs);
-
-  // Slice는 한 Array의 일부를 가리킬 수 있습니다.
-  // [start_index .. end_index] 형태로 작성합니다.
-  // start_index는 슬라이스가 시작될 지점이고,
-  // end_index는 (슬라이스가 끝나는 지점 + 1)에 해당합니다.
-  println!(&quot;borrow a section of the array as a slice&quot;);
-  analyze_slice(&amp;ys[1 .. 4]);
-
-  // Array의 길이를 벗어나서 인덱싱을 하게되면 컴파일 에러가 발생합니다.
-  println!(&quot;{}&quot;, xs[5]);
-}
-</code></pre>
+</code></pre></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../primitives/tuple.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../flow_control/loop/return.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../custom_types/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../flow_control/for.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -234,13 +212,13 @@ fn main() {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../primitives/tuple.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../flow_control/loop/return.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="../custom_types/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../flow_control/for.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
