@@ -36,3 +36,4 @@
 - [Expressions](expressions/index.md)
 - [Flow of Control](flow_control/index.md)
   - [if/else](flow_control/if_else.md)
+  - [Loop](flow_control/loop.md)
