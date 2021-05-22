@@ -33,4 +33,6 @@
   - [From and Into](conversion/from_into.md)
   - [TryFrom and TryInto](conversion/try_from_try_into.md)
   - [To and from Strings](conversion/string.md)
-- [Expressions](expressions/expressions.md)
+- [Expressions](expressions/index.md)
+- [Flow of Control](flow_control/index.md)
+  - [if/else](flow_control/if_else.md)
