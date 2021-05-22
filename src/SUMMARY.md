@@ -47,5 +47,5 @@
       - [enums](flow_control/match/destructuring/enums.md)
       - [pointers](flow_control/match/destructuring/pointers.md)
       - [structs](flow_control/match/destructuring/structs.md)
-    - [Guards](flow_control/match/guards/index.md)
-    - [Binding](flow_control/match/binding/index.md)
+    - [Guards](flow_control/match/guards.md)
+    - [Binding](flow_control/match/binding.md)
