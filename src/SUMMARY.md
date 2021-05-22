@@ -39,3 +39,5 @@
   - [Loop](flow_control/loop/index.md)
     - [Nesting and labels](flow_control/loop/nested.md)
     - [Returning from loops](flow_control/loop/return.md)
+  - [while](flow_control/while.md)
+  - [for and range](flow_control/for.md)
