@@ -166,6 +166,24 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="tuples"><a class="header" href="#tuples">tuples</a></h1>
+<ul>
+<li>튜플은 <code>match</code>를 통해 분해될 수 있습니다.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust edition2018">fn main() {
+    let triple = (0, -2, 3);
+
+    println!(&quot;Tell me about {:?}&quot;, triple);
+    // match는 튜플 값을 분해할 수 있습니다.
+    match triple {
+        // 2, 3번째 값을 바인딩하여 가져옵니다.
+        (0, y, z) =&gt; println!(&quot;First is `0`, `y` is {:?}, and `z` is {:?}&quot;, y, z),
+        (1, ..)  =&gt; println!(&quot;First is `1` and the rest doesn't matter&quot;),
+        // `..`는 튜플의 나머지 부분을 무시하기 위해 사용됩니다.
+        _      =&gt; println!(&quot;It doesn't matter what they are&quot;),
+        // `_`는 값을 변수에 바인딩하지 않겠다는 의미입니다.
+    }
+}
+</code></pre></pre>
 
                     </main>
 
