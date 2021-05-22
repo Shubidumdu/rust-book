@@ -1817,7 +1817,7 @@ fn main() {
 <ul>
 <li>튜플은 <code>match</code>를 통해 분해될 수 있습니다.</li>
 </ul>
-<pre><pre class="playground"><code class="language-rust edition2018">fn main() {
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
     let triple = (0, -2, 3);
 
     println!(&quot;Tell me about {:?}&quot;, triple);
@@ -1833,7 +1833,99 @@ fn main() {
 }
 </code></pre></pre>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="enums-1"><a class="header" href="#enums-1">enums</a></h1>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="pointers"><a class="header" href="#pointers">pointers</a></h1>
+<p><code>enum</code>도 유사하게 분해될 수 있습니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">// 사용하지 않은 변수에 대한 경고를 감춥니다.
+#[allow(dead_code)]
+enum Color {
+    // 아래 셋은 이름만 명시되어 있습니다.
+    Red,
+    Blue,
+    Green,
+    // 나머지는 `u32` 튜플들을 각자 다른 이름으로 묶습니다.
+    RGB(u32, u32, u32),
+    HSV(u32, u32, u32),
+    HSL(u32, u32, u32),
+    CMY(u32, u32, u32),
+    CMYK(u32, u32, u32, u32),
+}
+
+fn main() {
+    // 아래의 `RGB`를 다른 변형으로 바꾸어보세요.
+    let color = Color::RGB(122, 17, 40);
+
+    println!(&quot;What color is it?&quot;);
+    // `enum`은 `match`를 통해 분해될 수 있습니다.
+    match color {
+        Color::Red   =&gt; println!(&quot;The color is Red!&quot;),
+        Color::Blue  =&gt; println!(&quot;The color is Blue!&quot;),
+        Color::Green =&gt; println!(&quot;The color is Green!&quot;),
+        Color::RGB(r, g, b) =&gt;
+            println!(&quot;Red: {}, green: {}, and blue: {}!&quot;, r, g, b),
+        Color::HSV(h, s, v) =&gt;
+            println!(&quot;Hue: {}, saturation: {}, value: {}!&quot;, h, s, v),
+        Color::HSL(h, s, l) =&gt;
+            println!(&quot;Hue: {}, saturation: {}, lightness: {}!&quot;, h, s, l),
+        Color::CMY(c, m, y) =&gt;
+            println!(&quot;Cyan: {}, magenta: {}, yellow: {}!&quot;, c, m, y),
+        Color::CMYK(c, m, y, k) =&gt;
+            println!(&quot;Cyan: {}, magenta: {}, yellow: {}, key (black): {}!&quot;,
+                c, m, y, k),
+        // 모든 변형에 대해서 처리했습니다.
+    }
+}
+</code></pre></pre>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="pointersref"><a class="header" href="#pointersref">pointers/ref</a></h1>
+<p>포인터의 경우, C 언어와 같이, 다르게 사용되는 개념이기 때문에 분해(destructuring)과 역참조(dereferencing) 간의 구분이 필요하다.</p>
+<ul>
+<li>역참조(Dereference)는 <code>*</code>를 사용합니다.</li>
+<li>분해(Destructuring)은 <code>&amp;</code>, <code>ref</code>, 그리고 <code>ref mut</code>를 사용합니다.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust edition2018">fn main() {
+    // `i32` 타입의 레퍼런스를 할당합니다.
+    // `&amp;`는 할당된 참조가 존재함을 나타냅니다.
+    let reference = &amp;4;
+
+    match reference {
+        // 참조의 매칭은 `&amp;val`에 대해 이루어집니다.
+        // 즉 매칭은 `&amp;4` == `&amp;val`와 같이 이루어지는데,
+        // `&amp;`를 떼놓고 본다면, `i32`가 `val`과 매칭됨을 알 수 있습니다.
+        &amp;val =&gt; println!(&quot;Got a value via destructuring: {:?}&quot;, val),
+    }
+
+    // `&amp;`을 사용하지 않으려면, 역참조를 활용하면 됩니다.
+    match *reference {
+        val =&gt; println!(&quot;Got a value via dereferencing: {:?}&quot;, val),
+    }
+
+    // 애초에 참조를 사용하지 않는다면 어떨까요?
+    let _not_a_reference = 3;
+
+    // `ref`는 이런 경우에 사용하기 위해 `ref`를 제공합니다.
+    // `ref`를 사용하면, 요소에 대한 참조가 생성되도록 할당을 수정합니다.
+    // 이 경우, 값이 아닌, 참조가 할당됩니다.
+    let ref _is_a_reference = 3;
+
+    // 따라서, 참조 없이 정의한 아래의 두 값에 대해서도,
+    // `ref`와 `ref mut`를 통해 참조값을 얻을 수 있습니다.
+    let value = 5;
+    let mut mut_value = 6;
+
+    // `ref` 키워드가 참조를 생성합니다.
+    match value {
+        ref r =&gt; println!(&quot;Got a reference to a value: {:?}&quot;, r),
+    }
+
+    // `ref mut` 역시 유사합니다.
+    match mut_value {
+        ref mut m =&gt; {
+            // 참조를 얻어, 이에 대한 역참조를 얻습니다.
+            // 이후 해당 값을 수정합니다.
+            *m += 10;
+            println!(&quot;We added 10. `mut_value`: {:?}&quot;, m);
+        },
+    }
+}
+</code></pre></pre>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="structs"><a class="header" href="#structs">structs</a></h1>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="guards"><a class="header" href="#guards">Guards</a></h1>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="binding"><a class="header" href="#binding">Binding</a></h1>
