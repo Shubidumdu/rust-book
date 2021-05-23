@@ -62,3 +62,4 @@
     - [Examples in std](functions/closures/closure_examples/index.md)
       - [Iterator::any](functions/closures/closure_examples/iterator.md)
       - [Searching through iterators](functions/closures/closure_examples/searching.md)
+  - [Higher Order Functions](functions/closures/hof.md)
