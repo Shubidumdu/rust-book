@@ -14,7 +14,7 @@ Rust는 대부분 타입 정의 없이 즉각적으로 변수를 캡처하는 �
 
 아래 예시에서, `Fn`의 사용을 `FnMut`나 `FnOnce`로 바꾼 뒤 동작을 확인해보세요.
 
-```rust
+```rust,editable
 // 아래 함수는 클로저를 인자로 사용하여 호출합니다.
 // `<F>`는 제네릭 타입 매개변수를 나타냅니다.
 fn apply<F>(f: F) where
@@ -64,7 +64,7 @@ fn main() {
 
     // 클로저가 적용된 함수를 호출합니다.
     apply(diary);
-    
+
     // `double`은 `apply_to_3`의 트레이트 바운드를 충족시킵니다.
     let double = |x| 2 * x;
 
