@@ -31,7 +31,7 @@ loop {
 
 `while let`은 이를 더 나아보이게 만듭니다.
 
-```rust
+```rust,editable
 fn main() {
     // `Option<i32>` 타입을 갖는 `optional`을 바인딩합니다.
     let mut optional = Some(0);
