@@ -55,3 +55,4 @@
   - [Methods](functions/methods.md)
   - [Closures](functions/closures/index.md)
     - [Capturing](functions/closures/capturing.md)
+    - [As input parameters](functions/closures/input_parameter.md)
