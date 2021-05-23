@@ -59,3 +59,6 @@
     - [Type anonymity](functions/closures/anonymity.md)
     - [Input functions](functions/closures/input_functions.md)
     - [As output parameters](functions/closures/output_parameters.md)
+    - [Examples in std](functions/closures/closure_examples/index.md)
+      - [Iterator::any](functions/closures/closure_examples/iterator.md)
+      - [Searching through iterators](functions/closures/closure_examples/searching.md)
