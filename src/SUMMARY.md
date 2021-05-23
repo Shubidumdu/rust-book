@@ -63,3 +63,4 @@
       - [Iterator::any](functions/closures/closure_examples/iterator.md)
       - [Searching through iterators](functions/closures/closure_examples/searching.md)
   - [Higher Order Functions](functions/closures/hof.md)
+  - [Diverging functions](functions/diverging.md)
