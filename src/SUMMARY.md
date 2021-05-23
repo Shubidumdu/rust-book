@@ -58,3 +58,4 @@
     - [As input parameters](functions/closures/input_parameter.md)
     - [Type anonymity](functions/closures/anonymity.md)
     - [Input functions](functions/closures/input_functions.md)
+    - [As output parameters](functions/closures/output_parameters.md)
