@@ -51,4 +51,5 @@
     - [Binding](flow_control/match/binding.md)
   - [if let](flow_control/if_let.md)
   - [while let](flow_control/while_let.md)
-- [Functions](functions/fn.md)
+- [Functions](functions/index.md)
+  - [Methods](functions/methods.md)
