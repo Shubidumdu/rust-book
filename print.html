@@ -2667,6 +2667,63 @@ fn main() {
 }
 </code></pre></pre>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="searching-through-iterators"><a class="header" href="#searching-through-iterators">Searching through iterators</a></h1>
+<p><code>Iterator::find</code>는 순회 가능한 구조 객체들을 순회하며, 특정 조건을 만족하는 첫번째 값을 탐색하여 반환하는 함수입니다. 만약, 아무 값도 찾지 못했다면 <code>None</code>을 반환합니다.</p>
+<pre><pre class="playground"><code class="language-rust edition2018">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>pub trait Iterator {
+    // 순회될 대상 타입
+    type Item;
+
+    // `find`는 `&amp;mut self`를 받아서 사용합니다.
+    // 즉, 해당 메서드의 호출은 인스턴스 본인에 대한 참조를
+    // 대여하고 수정하지만, 소모하지는 않습니다.
+    fn find&lt;P&gt;(&amp;mut self, predicate: P) -&gt; Option&lt;Self::Item&gt; where
+        // `FnMut`는 캡처된 값이 수정될 순 있으나, 소모되진 않음을 의미합니다.
+        // `&amp;Self::Item`은 인수를 참조를 바탕으로 클로저에 보관함을 의미합니다.
+        P: FnMut(&amp;Self::Item) -&gt; bool {}
+}
+<span class="boring">}
+</span></code></pre></pre>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+    let vec1 = vec![1, 2, 3];
+    let vec2 = vec![4, 5, 6];
+
+    // `vec`의 `iter()`는 `&amp;i32`가 생성됩니다.
+    let mut iter = vec1.iter();
+    // `vec`의 `into_iter()`는 `i32`가 생성됩니다.
+    let mut into_iter = vec2.into_iter();
+
+    // `vec`의 `iter()`는 `&amp;i32`를 생성합니다.
+    // 그리고 우리는 각 요소들에 대한 레퍼런스를 참조하고자 합니다.
+    // 따라서 `&amp;&amp;i32`를 통한 구조분해로 `i32`를 사용해야 합니다.
+    println!(&quot;Find 2 in vec1: {:?}&quot;, iter     .find(|&amp;&amp;x| x == 2));
+
+    // `vec`의 `into_iter()`는 `i32`를 생성합니다.
+    // 그리고 우리는 각 요소들에 대한 레퍼런스를 참조하고자 합니다.
+    // 따라서 `&amp;i32`을 통한 구조 분해로 `i32`를 사용합니다.
+    println!(&quot;Find 2 in vec2: {:?}&quot;, into_iter.find(| &amp;x| x == 2));
+
+    let array1 = [1, 2, 3];
+    let array2 = [4, 5, 6];
+
+    // `array`의 `iter()`는 `&amp;i32`를 생성합니다.
+    println!(&quot;Find 2 in array1: {:?}&quot;, array1.iter()     .find(|&amp;&amp;x| x == 2));
+    // `array`의 `into_iter()`는 예외적으로 `&amp;i32`를 생성합니다.
+    println!(&quot;Find 2 in array2: {:?}&quot;, array2.into_iter().find(|&amp;&amp;x| x == 2));
+}
+</code></pre></pre>
+<p><code>Iterator::find</code>는 발견한 요소에 대한 참조를 제공합니다. 만약, 참조가 아닌 요소에 대한 인덱스가 필요한 경우라면, <code>Iterator::position</code>을 사용할 수 있습니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">fn main() {
+    let vec = vec![1, 9, 3, 3, 13, 2];
+
+    let index_of_first_even_number = vec.iter().position(|x| x % 2 == 0);
+    assert_eq!(index_of_first_even_number, Some(5));
+    
+    let index_of_first_negative_number = vec.iter().position(|x| x &lt; &amp;0);
+    assert_eq!(index_of_first_negative_number, None);
+}
+</code></pre></pre>
 
                     </main>
 
