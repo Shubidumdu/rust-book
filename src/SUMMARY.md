@@ -53,3 +53,5 @@
   - [while let](flow_control/while_let.md)
 - [Functions](functions/index.md)
   - [Methods](functions/methods.md)
+  - [Closures](functions/closures/index.md)
+    - [Capturing](functions/closures/capturing.md)
