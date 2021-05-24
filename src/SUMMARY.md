@@ -78,3 +78,4 @@
   - [Conventions](cargo/conventions.md)
   - [Tests](cargo/tests.md)
   - [Build Scripts](cargo/scripts.md)
+- [Attributes](attributes/index.md)
