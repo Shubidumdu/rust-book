@@ -166,6 +166,23 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="conventions"><a class="header" href="#conventions">Conventions</a></h1>
+<p>이전 챕터에서, 다음의 디렉토리 구조들을 살펴봤습니다.</p>
+<pre><code>foo
+├── Cargo.toml
+└── src
+    └── main.rs
+</code></pre>
+<p>만약, 동일한 프로젝트 내에서, 두개의 바이너리를 생성하고 싶다면 어떻게 해야할까요?</p>
+<p><code>cargo</code>가 이를 해결해줄 수 있습니다. 앞서 확인한 것처럼, 기본 바이너리의 이름은 <code>main</code>입니다. 그러나 <code>bin/</code> 디렉토리에 또 다른 바이너리를 추가할 수 있습니다.</p>
+<pre><code>foo
+├── Cargo.toml
+└── src
+    ├── main.rs
+    └── bin
+        └── my_other_bin.rs
+</code></pre>
+<p><code>cargo</code>에게 기본 바이너리 대신에 해당 바이너리를 컴파일하고, 실행하고 싶다면, <code>cargo</code>에 <code>--bin my_other_bin</code> 플래그를 전달하면 됩니다. <code>my_other_bin</code>은 작업을 수행하고자 하는 바이너리의 이름입니다.</p>
+<p>추가적인 바이너리에 대해, <code>cargo</code>는 벤치마크, 테스트 등 <a href="https://doc.rust-lang.org/cargo/guide/project-layout.html">더 많은 기능</a>들을 제공하고 있습니다. </p>
 
                     </main>
 
