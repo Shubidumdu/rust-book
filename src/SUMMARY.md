@@ -68,3 +68,4 @@
   - [Visibility](modules/visibility.md)
   - [Struct visibility](modules/struct_visibility.md)
   - [The use declaration](modules/use.md)
+  - [super and self](modules/super.md)
