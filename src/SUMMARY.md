@@ -73,3 +73,8 @@
 - [Crates](crates/index.md)
   - [Creating a Library](crates/create_library.md)
   - [Using a Library](crates/using_library.md)
+- [Cargo](cargo/index.md)
+  - [Dependencies](cargo/dependencies.md)
+  - [Conventions](cargo/conventions.md)
+  - [Tests](cargo/tests.md)
+  - [Build Scripts](cargo/scripts.md)
