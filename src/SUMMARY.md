@@ -81,4 +81,5 @@
 - [Attributes](attributes/index.md)
   - [dead_code](attributes/dead_code.md)
   - [Crate](attributes/crate.md)
-  - [cgf](attributes/cfg.md)
+  - [cfg](attributes/cfg/index.md)
+    - [Custom](attributes/cfg/custom.md)
