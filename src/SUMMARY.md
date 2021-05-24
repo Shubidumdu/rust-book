@@ -66,3 +66,4 @@
   - [Diverging functions](functions/diverging.md)
 - [Modules](modules/index.md)
   - [Visibility](modules/visibility.md)
+  - [Struct visibility](modules/struct_visibility.md)
