@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Dependencies - Shubidumdu&#x27;s Rust Book</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../index.html">Introduction</a></li><li class="chapter-item "><a href="../hello/index.html"><strong aria-hidden="true">1.</strong> Hello World</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/comment.html"><strong aria-hidden="true">1.1.</strong> Comments</a></li><li class="chapter-item "><a href="../hello/print/index.html"><strong aria-hidden="true">1.2.</strong> Formatted Print</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/debug.html"><strong aria-hidden="true">1.2.1.</strong> Debug</a></li><li class="chapter-item "><a href="../hello/print/display/index.html"><strong aria-hidden="true">1.2.2.</strong> Display</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hello/print/display/list.html"><strong aria-hidden="true">1.2.2.1.</strong> Testcase: List</a></li></ol></li><li class="chapter-item "><a href="../hello/print/formatting.html"><strong aria-hidden="true">1.2.3.</strong> Formatting</a></li></ol></li></ol></li><li class="chapter-item "><a href="../primitives/index.html"><strong aria-hidden="true">2.</strong> Primitives</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../primitives/literals.html"><strong aria-hidden="true">2.1.</strong> Literals and operators</a></li><li class="chapter-item "><a href="../primitives/tuple.html"><strong aria-hidden="true">2.2.</strong> Tuples</a></li><li class="chapter-item "><a href="../primitives/array.html"><strong aria-hidden="true">2.3.</strong> Arrays and Slices</a></li></ol></li><li class="chapter-item "><a href="../custom_types/index.html"><strong aria-hidden="true">3.</strong> Custom Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../custom_types/structs.html"><strong aria-hidden="true">3.1.</strong> Structures</a></li><li class="chapter-item "><a href="../custom_types/enums/index.html"><strong aria-hidden="true">3.2.</strong> Enums</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../custom_types/enums/use.html"><strong aria-hidden="true">3.2.1.</strong> use</a></li><li class="chapter-item "><a href="../custom_types/enums/c-like.html"><strong aria-hidden="true">3.2.2.</strong> C-like</a></li><li class="chapter-item "><a href="../custom_types/enums/testcase_linked_list.html"><strong aria-hidden="true">3.2.3.</strong> Testcase: linked-list</a></li></ol></li><li class="chapter-item "><a href="../custom_types/constants.html"><strong aria-hidden="true">3.3.</strong> constants</a></li></ol></li><li class="chapter-item "><a href="../variable_bindings/index.html"><strong aria-hidden="true">4.</strong> Variable Bindings</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../variable_bindings/mut.html"><strong aria-hidden="true">4.1.</strong> Mutability</a></li><li class="chapter-item "><a href="../variable_bindings/scope.html"><strong aria-hidden="true">4.2.</strong> Scope and Shadowing</a></li><li class="chapter-item "><a href="../variable_bindings/declare.html"><strong aria-hidden="true">4.3.</strong> Declare first</a></li><li class="chapter-item "><a href="../variable_bindings/feezing.html"><strong aria-hidden="true">4.4.</strong> Freezing</a></li></ol></li><li class="chapter-item "><a href="../types/index.html"><strong aria-hidden="true">5.</strong> Types</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../types/casting.html"><strong aria-hidden="true">5.1.</strong> Casting</a></li><li class="chapter-item "><a href="../types/literals.html"><strong aria-hidden="true">5.2.</strong> Literals</a></li><li class="chapter-item "><a href="../types/inference.html"><strong aria-hidden="true">5.3.</strong> Inference</a></li><li class="chapter-item "><a href="../types/aliasing.html"><strong aria-hidden="true">5.4.</strong> Aliasing</a></li></ol></li><li class="chapter-item "><a href="../conversion/index.html"><strong aria-hidden="true">6.</strong> Conversion</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../conversion/from_into.html"><strong aria-hidden="true">6.1.</strong> From and Into</a></li><li class="chapter-item "><a href="../conversion/try_from_try_into.html"><strong aria-hidden="true">6.2.</strong> TryFrom and TryInto</a></li><li class="chapter-item "><a href="../conversion/string.html"><strong aria-hidden="true">6.3.</strong> To and from Strings</a></li></ol></li><li class="chapter-item "><a href="../expressions/index.html"><strong aria-hidden="true">7.</strong> Expressions</a></li><li class="chapter-item "><a href="../flow_control/index.html"><strong aria-hidden="true">8.</strong> Flow of Control</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../flow_control/if_else.html"><strong aria-hidden="true">8.1.</strong> if/else</a></li><li class="chapter-item "><a href="../flow_control/loop/index.html"><strong aria-hidden="true">8.2.</strong> Loop</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../flow_control/loop/nested.html"><strong aria-hidden="true">8.2.1.</strong> Nesting and labels</a></li><li class="chapter-item "><a href="../flow_control/loop/return.html"><strong aria-hidden="true">8.2.2.</strong> Returning from loops</a></li></ol></li><li class="chapter-item "><a href="../flow_control/while.html"><strong aria-hidden="true">8.3.</strong> while</a></li><li class="chapter-item "><a href="../flow_control/for.html"><strong aria-hidden="true">8.4.</strong> for and range</a></li><li class="chapter-item "><a href="../flow_control/match/index.html"><strong aria-hidden="true">8.5.</strong> match</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../flow_control/match/destructuring/index.html"><strong aria-hidden="true">8.5.1.</strong> Destructuring</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../flow_control/match/destructuring/tuples.html"><strong aria-hidden="true">8.5.1.1.</strong> tuples</a></li><li class="chapter-item "><a href="../flow_control/match/destructuring/enums.html"><strong aria-hidden="true">8.5.1.2.</strong> enums</a></li><li class="chapter-item "><a href="../flow_control/match/destructuring/pointers.html"><strong aria-hidden="true">8.5.1.3.</strong> pointers</a></li><li class="chapter-item "><a href="../flow_control/match/destructuring/structs.html"><strong aria-hidden="true">8.5.1.4.</strong> structs</a></li></ol></li><li class="chapter-item "><a href="../flow_control/match/guards.html"><strong aria-hidden="true">8.5.2.</strong> Guards</a></li><li class="chapter-item "><a href="../flow_control/match/binding.html"><strong aria-hidden="true">8.5.3.</strong> Binding</a></li></ol></li><li class="chapter-item "><a href="../flow_control/if_let.html"><strong aria-hidden="true">8.6.</strong> if let</a></li><li class="chapter-item "><a href="../flow_control/while_let.html"><strong aria-hidden="true">8.7.</strong> while let</a></li></ol></li><li class="chapter-item "><a href="../functions/index.html"><strong aria-hidden="true">9.</strong> Functions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../functions/methods.html"><strong aria-hidden="true">9.1.</strong> Methods</a></li><li class="chapter-item "><a href="../functions/closures/index.html"><strong aria-hidden="true">9.2.</strong> Closures</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../functions/closures/capturing.html"><strong aria-hidden="true">9.2.1.</strong> Capturing</a></li><li class="chapter-item "><a href="../functions/closures/input_parameter.html"><strong aria-hidden="true">9.2.2.</strong> As input parameters</a></li><li class="chapter-item "><a href="../functions/closures/anonymity.html"><strong aria-hidden="true">9.2.3.</strong> Type anonymity</a></li><li class="chapter-item "><a href="../functions/closures/input_functions.html"><strong aria-hidden="true">9.2.4.</strong> Input functions</a></li><li class="chapter-item "><a href="../functions/closures/output_parameters.html"><strong aria-hidden="true">9.2.5.</strong> As output parameters</a></li><li class="chapter-item "><a href="../functions/closures/closure_examples/index.html"><strong aria-hidden="true">9.2.6.</strong> Examples in std</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../functions/closures/closure_examples/iterator.html"><strong aria-hidden="true">9.2.6.1.</strong> Iterator::any</a></li><li class="chapter-item "><a href="../functions/closures/closure_examples/searching.html"><strong aria-hidden="true">9.2.6.2.</strong> Searching through iterators</a></li></ol></li></ol></li><li class="chapter-item "><a href="../functions/closures/hof.html"><strong aria-hidden="true">9.3.</strong> Higher Order Functions</a></li><li class="chapter-item "><a href="../functions/diverging.html"><strong aria-hidden="true">9.4.</strong> Diverging functions</a></li></ol></li><li class="chapter-item "><a href="../modules/index.html"><strong aria-hidden="true">10.</strong> Modules</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../modules/visibility.html"><strong aria-hidden="true">10.1.</strong> Visibility</a></li><li class="chapter-item "><a href="../modules/struct_visibility.html"><strong aria-hidden="true">10.2.</strong> Struct visibility</a></li><li class="chapter-item "><a href="../modules/use.html"><strong aria-hidden="true">10.3.</strong> The use declaration</a></li><li class="chapter-item "><a href="../modules/super.html"><strong aria-hidden="true">10.4.</strong> super and self</a></li><li class="chapter-item "><a href="../modules/split.html"><strong aria-hidden="true">10.5.</strong> File hierarchy</a></li></ol></li><li class="chapter-item "><a href="../crates/index.html"><strong aria-hidden="true">11.</strong> Crates</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../crates/create_library.html"><strong aria-hidden="true">11.1.</strong> Creating a Library</a></li><li class="chapter-item "><a href="../crates/using_library.html"><strong aria-hidden="true">11.2.</strong> Using a Library</a></li></ol></li><li class="chapter-item expanded "><a href="../cargo/index.html"><strong aria-hidden="true">12.</strong> Cargo</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../cargo/dependencies.html" class="active"><strong aria-hidden="true">12.1.</strong> Dependencies</a></li><li class="chapter-item "><a href="../cargo/conventions.html"><strong aria-hidden="true">12.2.</strong> Conventions</a></li><li class="chapter-item "><a href="../cargo/tests.html"><strong aria-hidden="true">12.3.</strong> Tests</a></li><li class="chapter-item "><a href="../cargo/scripts.html"><strong aria-hidden="true">12.4.</strong> Build Scripts</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Shubidumdu&#x27;s Rust Book</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                        
+
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="dependencies"><a class="header" href="#dependencies">Dependencies</a></h1>
+<p>대부분의 프로그램은 여러 라이브러리에 의존성을 갖고 있습니다. 만약 일일이 의존성을 관리했던 경험이 있다면, 그것이 얼마나 힘든 일인지 알고 계실 겁니다. 다행히도, Rust 생태계는 <code>cargo</code>를 기반으로 구축되어 있습니다! <code>cargo</code>가 프로젝트의 의존성을 관리해줄 수 있습니다.</p>
+<p>Rust 프로젝트를 생성해봅시다.</p>
+<pre><code class="language-bash"># 바이너리 프로젝트를 생성합니다.
+cargo new foo
+
+# 또는 라이브러리 프로젝트를 생성합니다.
+cargo new --lib foo 
+</code></pre>
+<p>해당 챕터의 나머지 부분에서, 저희는 바이너리 프로젝트를 기반으로 한다고 가정하겠습니다. 하지만 전반적인 컨셉 자체는 모두 동일합니다.</p>
+<p>위의 명령을 실행하고 나면, 아래와 같은 파일 구조를 확인할 수 있습니다.</p>
+<pre><code>foo
+├── Cargo.toml
+└── src
+    └── main.rs
+
+</code></pre>
+<p><code>main.rs</code>는 (특별할 것 없는) 새로운 프로젝트의 루트 소스 파일입니다. <code>Cargo.toml</code>은 해당 프로젝트(<code>foo</code>)에 대한 <code>cargo</code> 설정파일입니다. 이를 살펴보면, 아래와 같은 내용을 확인할 수 있습니다.</p>
+<pre><code class="language-toml">[package]
+name = &quot;foo&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;mark&quot;]
+
+[dependencies]
+</code></pre>
+<p><code>[package]</code> 아래의 <code>name</code> 필드는 프로젝트의 이름을 결정합니다. 이는 추후에 크레이트를 배포하는 경우 <code>crate.io</code>에 의해 사용됩니다. 컴파일 시에 출력되는 바이너리의 이름이기도 합니다.</p>
+<ul>
+<li>
+<p><code>version</code> 필드는 <a href="https://semver.org/">Semantic Versioning</a>에 따른 크레이트 버전을 나타냅니다.</p>
+</li>
+<li>
+<p><code>authors</code> 필드는 크레이트를 배포할 때 사용되는 작성자들의 리스트입니다.</p>
+</li>
+<li>
+<p><code>[dependencies]</code> 섹션에는 프로젝트에 사용되는 모든 의존성이 추가됩니다.</p>
+</li>
+</ul>
+<p>예를 들어, 어마어마한 CLI 프로그램을 개발하려 한다고 가정해봅시다. <a href="https://crates.io/">crate.io</a>에서 여러가지 굉장한 패키지를 찾을 수 있습니다. 그 중 인기있는 하나는 <a href="https://crates.io/crates/clap">clap</a>입니다. 현재 <code>clap</code>의 최신 버전은 <code>2.27.1</code>입니다. 저희 프로젝트에 해당 의존성을 추가하기 위해선, <code>Cargo.toml</code>의 <code>[dependencies]</code>에 단순히 <code>clap = &quot;2.27.1&quot;</code>을 추가하기만 하면 됩니다. 이제 <code>clap</code>을 프로젝트에서 사용할 수 있습니다!</p>
+<p><code>cargo</code>는 [다른 종류의 의존성]도 지원합니다. 아래는 간단한 예시입니다.</p>
+<pre><code class="language-toml">[package]
+name = &quot;foo&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;mark&quot;]
+
+[dependencies]
+clap = &quot;2.27.1&quot; # crates.io 의존성
+rand = { git = &quot;https://github.com/rust-lang-nursery/rand&quot; } # 온라인 저장소
+bar = { path = &quot;../bar&quot; } # 로컬 파일시스템
+</code></pre>
+<p><code>cargo</code>는 단순한 의존성 관리자 그 이상의 역할을 수행합니다. <code>Cargo.toml</code>에서 활용할 수 있는 모든 설정 옵션들은 <a href="https://doc.rust-lang.org/cargo/reference/manifest.html">여기</a>에서 찾아볼 수 있습니다.</p>
+<p>프로젝트를 빌드하기 위해서는 프로젝트 디렉토리 내 어디서든 <code>cargo build</code>를 실행하면 됩니다. <code>cargo run</code>을 실행하면 빌드와 구동을 한꺼번에 합니다. 이러한 명령들은 모든 종속성을 해결하고, 필요한 경우 크레이트를 다운로드하며, 우리 프로젝트의 크레이트를 포함한 모든 것을 빌드해줍니다. (이는 <code>make</code> 명령과 비슷하게, 이미 빌드되지 않은 사항에 대해서만 다시 빌드를 수행합니다.)</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../cargo/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../cargo/conventions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../cargo/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../cargo/conventions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
