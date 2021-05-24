@@ -79,3 +79,5 @@
   - [Tests](cargo/tests.md)
   - [Build Scripts](cargo/scripts.md)
 - [Attributes](attributes/index.md)
+  - [dead_code](attributes/dead_code.md)
+  
