@@ -64,3 +64,5 @@
       - [Searching through iterators](functions/closures/closure_examples/searching.md)
   - [Higher Order Functions](functions/closures/hof.md)
   - [Diverging functions](functions/diverging.md)
+- [Modules](modules/index.md)
+  - [Visibility](modules/visibility.md)
