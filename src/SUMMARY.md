@@ -70,3 +70,6 @@
   - [The use declaration](modules/use.md)
   - [super and self](modules/super.md)
   - [File hierarchy](modules/split.md)
+- [Crates](crates/index.md)
+  - [Creating a Library](crates/create_library.md)
+  - [Using a Library](crates/using_library.md)
