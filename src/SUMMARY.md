@@ -98,3 +98,4 @@
   - [Phantom type parameters](generics/phantom/index.md)
     - [Testcase: unit clarification](generics/phantom/testcase_units.md)
 - [Scoping rules](scope/index.md)
+  - [RAII](scope/raii.md)
