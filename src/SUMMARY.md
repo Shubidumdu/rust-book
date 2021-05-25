@@ -83,3 +83,5 @@
   - [Crate](attributes/crate.md)
   - [cfg](attributes/cfg/index.md)
     - [Custom](attributes/cfg/custom.md)
+- [Generics](generics/index.md)
+  - [Functions](generics/functions.md)
