@@ -6,7 +6,7 @@
 
 명시적으로 타입 매개변수를 지정하여 함수를 호출하는 경우, 다음과 같은 형태를 띕니다. `func::<A, B, ...>()`
 
-```rust
+```rust,editable
 struct A;          // 콘크리트 타입 'A'
 struct S(A);       // 콘크리트 타입 'B'
 struct SGen<T>(T); // 제네릭 타입 'SGen'

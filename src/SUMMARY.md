@@ -85,3 +85,4 @@
     - [Custom](attributes/cfg/custom.md)
 - [Generics](generics/index.md)
   - [Functions](generics/functions.md)
+  - [implementation](generics/implementation.md)
