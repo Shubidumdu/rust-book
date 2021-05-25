@@ -3500,7 +3500,7 @@ fn main() {
 condition met!
 </code></pre>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="generics"><a class="header" href="#generics">Generics</a></h1>
-<p><strong>제네릭</strong>은 더 다양한 상황에 적용될 수 있도록 타입과 함수를 일반화시키는 개념입니다. 이는 여러 방법으로 코드 중복을 줄일 수 있어 유용하지만, 추가적인 구문 작성을 요구합니다. 말 그대로, 제네릭이 되려면 제네릭 타입이 실제로 유효한 것으로 간주되는 타입을 명시하구 위한 세심한 주의가 필요합니다. 가장 간단하고 일반적인 제네릭의 사용은 타입 매개변수입니다.</p>
+<p><strong>제네릭</strong>은 더 다양한 상황에 적용될 수 있도록 타입과 함수를 일반화시키는 개념입니다. 이는 여러 방법으로 코드 중복을 줄일 수 있어 유용하지만, 추가적인 구문 작성을 요구합니다. 말 그대로, 제네릭이 되려면 제네릭 타입이 실제로 유효한 것으로 간주되는 타입을 명시하기 위한 세심한 주의가 필요합니다. 가장 간단하고 일반적인 제네릭의 사용은 타입 매개변수입니다.</p>
 <p>타입 매개변수는 <code>&lt;&gt;</code> 괄호와 CamelCase로 제네릭을 명시할 수 있습니다. (ex. <code>&lt;Aaa, Bbb, ...&gt;</code>). <em>제네릭 타입 매개변수</em>는 일반적으로 <code>&lt;T&gt;</code>로 나타냅니다. Rust에서의 &quot;제네릭&quot;은 하나 이상의 제네릭 타입 매개변수를 허용하는 모든 항목을 의미합니다. 제네릭 타입 매개변수로 정의되는 어떤 타입이든 제네릭이 되며, 그렇지 않은 것들은 콘크리트(concrete, non-generic)가 됩니다.</p>
 <p>예를 들어, <code>foo</code>라는 이름을 가진 제네릭함수를 정의하고 모든 타입에 대한 매개변수 <code>T</code>를 받도록 하겠습니다.</p>
 <pre><pre class="playground"><code class="language-rust edition2018">
@@ -3528,7 +3528,7 @@ fn main() {
     // 이 시점에서, 모호했던 `SingleGen`에 명시적인 타입 매개변수가 지정됩니다.
     let _char: SingleGen&lt;char&gt; = SingleGen('a');
 
-    // 여전히 `SingleGen`은 내부적으로 지정된 제네릭 타입 매개변수가 있습니다.
+    // 여전히 `SingleGen`은 암시적으로 지정된 제네릭 타입 매개변수가 있습니다.
     let _t    = SingleGen(A); // 최상단의 `A` 타입
     let _i32  = SingleGen(6); // `i32`
     let _char = SingleGen('a'); // `char`
@@ -3582,7 +3582,7 @@ fn main() {
 fn main() {
   struct S; // 콘크리트 타입 `S`
   struct GenericVal&lt;T&gt;(T); // 제네릭 타입 `GenericVal`
-:
+  
   // 명시적인 타입 매개변수 지정을 통한 GenericVal의 구현
   impl GenericVal&lt;f32&gt; {} // `f32` 지정
   impl GenericVal&lt;S&gt; {} // 상단의 `S` 타입에 대한 지정
@@ -3852,6 +3852,13 @@ fn main() {
 }
 </code></pre></pre>
 <p><code>newtype</code>의 값을 기본 타입으로 얻으려면, 다음과 같이 튜플을 사용할 수 있습니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">struct Years(i64);
+
+fn main() {
+    let years = Years(42);
+    let years_as_primitive: i64 = years.0;
+}
+</code></pre></pre>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="associated-items"><a class="header" href="#associated-items">Associated items</a></h1>
 <p>**연관 항목(Associated items)**이란 다양한 유형의 항목들과 관련된 규칙들의 집합을 가리킵니다. 이는 <code>trait</code> 제네륵의 확장이며, <code>trait</code>들이 내부적으로 새로운 항목들을 정의할 수 있도록 합니다.</p>
 <p>이러한 항목 중 하나를 *연관 유형(Associated Type)*이라고 하며, 트레이트가 컨테이너 타입보다 제네릭일 때 더 간단한 사용 패턴을 제공합니다.</p>

@@ -200,6 +200,13 @@ fn main() {
 }
 </code></pre></pre>
 <p><code>newtype</code>의 값을 기본 타입으로 얻으려면, 다음과 같이 튜플을 사용할 수 있습니다.</p>
+<pre><pre class="playground"><code class="language-rust editable edition2018">struct Years(i64);
+
+fn main() {
+    let years = Years(42);
+    let years_as_primitive: i64 = years.0;
+}
+</code></pre></pre>
 
                     </main>
 
