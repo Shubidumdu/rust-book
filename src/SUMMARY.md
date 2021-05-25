@@ -96,3 +96,4 @@
     - [The Problem](generics/assoc_items/the_problem.md)
     - [Associated types](generics/assoc_items/types.md)
   - [Phantom type parameters](generics/phantom/index.md)
+    - [Testcase: unit clarification](generics/phantom/testcase_units.md)
