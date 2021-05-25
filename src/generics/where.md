@@ -17,7 +17,7 @@ impl <A, D> MyTrait<A, D> for YourType where
 
 - `where`문을 사용하는 것이 일반 구문보다 더 명확한 경우. 아래 예시에서 `impl`은 `where`문 없이는 직접 표현될 수 없습니다.
 
-```rust
+```rust,editable
 use std::fmt::Debug;
 
 trait PrintInOption {

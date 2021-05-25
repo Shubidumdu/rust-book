@@ -91,3 +91,4 @@
     - [Testcase: empty bounds](generics/bounds/empty_bounds.md)
   - [Multiple bounds](generics/multi_bounds.md)
   - [Where clauses](generics/where.md)
+  - [New Type Idiom](generics/new_types.md)
