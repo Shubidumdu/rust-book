@@ -86,3 +86,4 @@
 - [Generics](generics/index.md)
   - [Functions](generics/functions.md)
   - [implementation](generics/implementation.md)
+  - [Traits](generics/trait.md)
