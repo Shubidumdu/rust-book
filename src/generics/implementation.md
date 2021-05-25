@@ -7,7 +7,7 @@
 fn main() {
   struct S; // 콘크리트 타입 `S`
   struct GenericVal<T>(T); // 제네릭 타입 `GenericVal`
-:
+  
   // 명시적인 타입 매개변수 지정을 통한 GenericVal의 구현
   impl GenericVal<f32> {} // `f32` 지정
   impl GenericVal<S> {} // 상단의 `S` 타입에 대한 지정

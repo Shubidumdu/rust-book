@@ -39,3 +39,11 @@ fn main() {
 
 `newtype`의 값을 기본 타입으로 얻으려면, 다음과 같이 튜플을 사용할 수 있습니다.
 
+```rust,editable
+struct Years(i64);
+
+fn main() {
+    let years = Years(42);
+    let years_as_primitive: i64 = years.0;
+}
+```
