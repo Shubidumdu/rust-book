@@ -2,7 +2,7 @@
 
 당연히 `trait` 역시 제네릭이 될 수 있습니다. 
 
-```rust
+```rust,editable
 // Non-copyable 타입
 struct Empty;
 struct Null;

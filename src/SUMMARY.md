@@ -87,3 +87,5 @@
   - [Functions](generics/functions.md)
   - [implementation](generics/implementation.md)
   - [Traits](generics/trait.md)
+  - [Bounds](generics/bounds/index.md)
+    - [Testcase: empty bounds](generics/bounds/empty_bounds.md)
