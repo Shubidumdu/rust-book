@@ -2,7 +2,7 @@
 
 다중 바운드(Multiple bounds)는 `+`로 적용할 수 있습니다. 여러 타입에 대해서는 `,`로 구분합니다.
 
-```rust
+```rust,editable
 use std::fmt::{Debug, Display};
 
 fn compare_prints<T: Debug + Display>(t: &T) {

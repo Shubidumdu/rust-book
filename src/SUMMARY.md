@@ -90,3 +90,4 @@
   - [Bounds](generics/bounds/index.md)
     - [Testcase: empty bounds](generics/bounds/empty_bounds.md)
   - [Multiple bounds](generics/multi_bounds.md)
+  - [Where clauses](generics/where.md)
