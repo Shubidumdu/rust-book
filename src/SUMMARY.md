@@ -99,3 +99,6 @@
     - [Testcase: unit clarification](generics/phantom/testcase_units.md)
 - [Scoping rules](scope/index.md)
   - [RAII](scope/raii.md)
+  - [Ownership and moves](scope/move/index.md)
+    - [Mutability](scope/move/mutability.md)
+    - [Partial moves](scope/move/partial_moves.md)
