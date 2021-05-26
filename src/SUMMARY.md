@@ -106,3 +106,5 @@
     - [Mutability](scope/borrow/mutability.md)
     - [Aliasing](scope/borrow/aliasing.md)
     - [The ref pattern](scope/borrow/ref.md)
+  - [Lifetimes](scope/lifetime/index.md)
+    - [Explicit annotation](scope/lifetime/explicit.md)
