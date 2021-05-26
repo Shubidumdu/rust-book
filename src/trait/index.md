@@ -4,7 +4,7 @@
 
 트레이트들은 어떤 데이터 타입에 대해서도 구현될 수 있습니다. 아래 예시에서, 우리는 `Animal`이라고 하는 메서드 모음을 정의할 것입니다. 이 `Animal` 트레이트는 `Sheep` 데이터 타입에 대해서 구현될 것이고, 이에 따라 `Sheep` 타입에서 `Animal`로부터의 메서드를 사용할 수 있습니다.
 
-```rust
+```rust,editable
 struct Sheep { naked: bool, name: &'static str }
 
 trait Animal {

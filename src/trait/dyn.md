@@ -6,7 +6,7 @@ Rust 컴파일러는 모든 함수들의 반환 타입이 요구하는 공간이
 
 Rust는 힙에 메모리를 할당할 때마다 가능한 명시적으로 하려고 합니다. 따라서, 만약 함수가 아래 방식으로 *힙에 있는 트레이트에 대한 포인터*(pointer-to-trait-on-heap)를 반환한다면, 반환 타입을 `dyn` 키워드와 함께 작성해주어야 합니다. (ex. `Box<dyn Animal>`)
 
-```rust
+```rust,editable
 struct Sheep {}
 struct Cow {}
 

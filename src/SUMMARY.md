@@ -119,3 +119,4 @@
 - [Traits](trait/index.md)
   - [Derive](trait/derive.md)
   - [Returning Traits with dyn](trait/dyn.md)
+  - [Operator Overloading](trait/ops.md)

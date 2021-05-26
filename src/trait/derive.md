@@ -11,7 +11,7 @@
 - `Default`, 데이터 타입의 비어있는 인스턴스를 생성합니다.
 - `Debug`, `{:?}` 포맷에 사용할 값을 지정합니다.
 
-```rust
+```rust,editable
 // `Centimeters`는 비교 가능한 튜플 구조입니다.
 #[derive(PartialEq, PartialOrd)]
 struct Centimeters(f64);
