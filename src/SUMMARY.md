@@ -112,3 +112,4 @@
     - [Methods](scope/lifetime/methods.md)
     - [Structs](scope/lifetime/struct.md)
     - [Traits](scope/lifetime/trait.md)
+    - [Bounds](scope/lifetime/bounds.md)
