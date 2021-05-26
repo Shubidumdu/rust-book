@@ -102,3 +102,7 @@
   - [Ownership and moves](scope/move/index.md)
     - [Mutability](scope/move/mutability.md)
     - [Partial moves](scope/move/partial_moves.md)
+  - [Borrowing](scope/borrow/index.md)
+    - [Mutability](scope/borrow/mutability.md)
+    - [Aliasing](scope/borrow/aliasing.md)
+    - [The ref pattern](scope/borrow/ref.md)
