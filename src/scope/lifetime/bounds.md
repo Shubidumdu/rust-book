@@ -7,7 +7,7 @@
 
 아래의 예제는 `where` 키워드 다음에 위와 같이 라이프타임 제한을 적용합니다.
 
-```rust
+```rust,editable
 use std::fmt::Debug; // 제한을 적용할 트레이트입니다.
 
 #[derive(Debug)]

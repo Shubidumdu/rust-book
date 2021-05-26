@@ -113,3 +113,4 @@
     - [Structs](scope/lifetime/struct.md)
     - [Traits](scope/lifetime/trait.md)
     - [Bounds](scope/lifetime/bounds.md)
+    - [Coercion](scope/lifetime/coercion.md)
