@@ -117,3 +117,4 @@
     - [Static](scope/lifetime/static.md)
     - [Elision](scope/lifetime/elision.md)
 - [Traits](trait/index.md)
+  - [Derive](trait/derive.md)
