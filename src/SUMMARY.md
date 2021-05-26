@@ -125,3 +125,4 @@
   - [impl Trait](trait/impl_trait.md)
   - [Clone](trait/clone.md)
   - [Supertraits](trait/supertraits.md)
+  - [Disambiguating overlapping traits](trait/disambiguating.md)
