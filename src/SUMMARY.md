@@ -121,3 +121,4 @@
   - [Returning Traits with dyn](trait/dyn.md)
   - [Operator Overloading](trait/ops.md)
   - [Drop](trait/drop.md)
+  - [Iterators](trait/iter.md)

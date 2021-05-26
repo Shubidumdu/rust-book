@@ -6,7 +6,7 @@
 
 아래는 `drop` 함수가 실행될 때 콘솔에 문구를 출력해보는 예시입니다.
 
-```rust
+```rust,editable
 struct Droppable {
     name: &'static str,
 }
