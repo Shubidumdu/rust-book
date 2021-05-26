@@ -2,7 +2,7 @@
 
 메서드들도 함수와 유사하게 지정됩니다.
 
-```rust
+```rust,editable
 struct Owner(i32);
 
 impl Owner {

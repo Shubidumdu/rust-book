@@ -20,7 +20,7 @@ foo<'a, 'b>
 
 명시적인 라이프타임 지정은 아래 예시와 같이 사용될 수 있습니다.
 
-```rust
+```rust,editable
 // `print_refs`는 다른 라이프타임을 갖는 `'a`와 `'b`에 대한 두 참조를 갖습니다.
 // 이 두 라이프타임은 적어도 `print_refs` 내에서는 유효합니다. 
 fn print_refs<'a, 'b>(x: &'a i32, y: &'b i32) {

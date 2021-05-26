@@ -110,3 +110,5 @@
     - [Explicit annotation](scope/lifetime/explicit.md)
     - [Functions](scope/lifetime/fn.md)
     - [Methods](scope/lifetime/methods.md)
+    - [Structs](scope/lifetime/struct.md)
+    
