@@ -111,4 +111,4 @@
     - [Functions](scope/lifetime/fn.md)
     - [Methods](scope/lifetime/methods.md)
     - [Structs](scope/lifetime/struct.md)
-    
+    - [Traits](scope/lifetime/trait.md)
