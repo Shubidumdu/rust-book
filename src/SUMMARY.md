@@ -109,3 +109,4 @@
   - [Lifetimes](scope/lifetime/index.md)
     - [Explicit annotation](scope/lifetime/explicit.md)
     - [Functions](scope/lifetime/fn.md)
+    - [Methods](scope/lifetime/methods.md)
