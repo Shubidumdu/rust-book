@@ -116,3 +116,4 @@
     - [Coercion](scope/lifetime/coercion.md)
     - [Static](scope/lifetime/static.md)
     - [Elision](scope/lifetime/elision.md)
+- [Traits](trait/index.md)
