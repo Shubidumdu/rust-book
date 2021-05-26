@@ -124,3 +124,4 @@
   - [Iterators](trait/iter.md)
   - [impl Trait](trait/impl_trait.md)
   - [Clone](trait/clone.md)
+  - [Supertraits](trait/supertraits.md)
