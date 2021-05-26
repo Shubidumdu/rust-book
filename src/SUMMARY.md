@@ -115,3 +115,4 @@
     - [Bounds](scope/lifetime/bounds.md)
     - [Coercion](scope/lifetime/coercion.md)
     - [Static](scope/lifetime/static.md)
+    - [Elision](scope/lifetime/elision.md)
