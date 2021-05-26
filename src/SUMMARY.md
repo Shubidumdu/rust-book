@@ -118,3 +118,4 @@
     - [Elision](scope/lifetime/elision.md)
 - [Traits](trait/index.md)
   - [Derive](trait/derive.md)
+  - [Returning Traits with dyn](trait/dyn.md)
