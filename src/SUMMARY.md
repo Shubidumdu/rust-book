@@ -108,3 +108,4 @@
     - [The ref pattern](scope/borrow/ref.md)
   - [Lifetimes](scope/lifetime/index.md)
     - [Explicit annotation](scope/lifetime/explicit.md)
+    - [Functions](scope/lifetime/fn.md)
