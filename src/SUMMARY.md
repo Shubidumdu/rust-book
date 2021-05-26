@@ -122,3 +122,4 @@
   - [Operator Overloading](trait/ops.md)
   - [Drop](trait/drop.md)
   - [Iterators](trait/iter.md)
+  - [impl Trait](trait/impl_trait.md)
