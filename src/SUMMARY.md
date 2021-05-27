@@ -127,3 +127,7 @@
   - [Supertraits](trait/supertraits.md)
   - [Disambiguating overlapping traits](trait/disambiguating.md)
 - [macro_rules!](macros/index.md)
+  - [Syntax](macros/syntax/index.md)
+    - [Designators](macros/syntax/designators.md)
+    - [Overload](macros/syntax/overload.md)
+    - [Repeat](macros/syntax/repeat.md)
