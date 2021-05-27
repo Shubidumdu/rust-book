@@ -151,3 +151,4 @@
     - [Boxing errors](error/multiple_error_types/boxing_errors.md)
     - [Other uses of ?](error/multiple_error_types/reenter_question_mark.md)
     - [Wrapping errors](error/multiple_error_types/wrapping_errors.md)
+  - [Iterating over Results](error/iter_result.md)
