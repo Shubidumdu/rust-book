@@ -2,7 +2,7 @@
 
 매크로의 인수는 `$`문자가 접두어로 붙습니다. 이후 *지정자(designator)*로 타입이 지정됩니다.
 
-```rust
+```rust,editable
 macro_rules! create_function {
     // 아래 매크로는 `ident` 지정자의 인수를 받아
     // `$func_name`라는 이름의 함수를 생성합니다.
