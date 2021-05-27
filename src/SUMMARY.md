@@ -162,3 +162,4 @@
   - [panic!](std/panic.md)
   - [HashMap](std/hash/index.md)
     - [Alternate/custom key types](std/hash/alt_key_types.md)
+    - [HashSet](std/hash/hashset.md)
