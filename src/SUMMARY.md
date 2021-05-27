@@ -132,3 +132,4 @@
     - [Overload](macros/syntax/overload.md)
     - [Repeat](macros/syntax/repeat.md)
   - [DRY (Don't Repeat Yourself)](macros/dry.md)
+  - [DSL (Domain Specific Languages)](macros/dsl.md)
