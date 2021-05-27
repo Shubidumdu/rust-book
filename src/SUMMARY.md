@@ -136,3 +136,4 @@
   - [Variadic Interface](macros/variadics.md)
 - [Error handling](error/index.md)
   - [panic](error/panic.md)
+  - [Option & unwrap](error/option_unwrap/index.md)
