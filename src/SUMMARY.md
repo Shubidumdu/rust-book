@@ -154,3 +154,4 @@
   - [Iterating over Results](error/iter_result.md)
 - [Std library types](std/index.md)
   - [Box, stack, and heap](std/box.md)
+  - [Vectors](std/vec.md)
