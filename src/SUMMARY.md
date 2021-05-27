@@ -156,3 +156,4 @@
   - [Box, stack, and heap](std/box.md)
   - [Vectors](std/vec.md)
   - [Strings](std/string.md)
+  - [Option](std/option.md)
