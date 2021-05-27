@@ -155,3 +155,4 @@
 - [Std library types](std/index.md)
   - [Box, stack, and heap](std/box.md)
   - [Vectors](std/vec.md)
+  - [Strings](std/string.md)
