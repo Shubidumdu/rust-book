@@ -153,3 +153,4 @@
     - [Wrapping errors](error/multiple_error_types/wrapping_errors.md)
   - [Iterating over Results](error/iter_result.md)
 - [Std library types](std/index.md)
+  - [Box, stack, and heap](std/box.md)
