@@ -142,3 +142,4 @@
   - [Combinators: and_then](error/option_unwrap/and_then.md)
   - [Result](error/result/index.md)
     - [map for Result](error/result/result_map.md)
+    - [aliases for Result](error/result/result_alias.md)
