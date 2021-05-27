@@ -134,3 +134,5 @@
   - [DRY (Don't Repeat Yourself)](macros/dry.md)
   - [DSL (Domain Specific Languages)](macros/dsl.md)
   - [Variadic Interface](macros/variadics.md)
+- [Error handling](error/index.md)
+  - [panic](error/panic.md)
