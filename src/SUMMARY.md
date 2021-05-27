@@ -145,3 +145,4 @@
     - [aliases for Result](error/result/result_alias.md)
     - [Early returns](error/result/early_returns.md)
     - [Introducing ?](error/result/enter_question_mark.md)
+  - [Multiple error types](error/multiple_error_types/index.md)
