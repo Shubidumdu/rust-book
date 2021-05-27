@@ -157,3 +157,4 @@
   - [Vectors](std/vec.md)
   - [Strings](std/string.md)
   - [Option](std/option.md)
+  - [Result](std/result.md)
