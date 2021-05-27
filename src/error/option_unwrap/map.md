@@ -6,7 +6,7 @@
 
 다음 예시에서, `process()`는 간단한 형태를 유지한 채로 이전의 모든 함수들을 대신하고 있습니다.
 
-```rust
+```rust,editable
 #![allow(dead_code)]
 
 #[derive(Debug)] enum Food { Apple, Carrot, Potato }
