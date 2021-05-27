@@ -164,3 +164,4 @@
     - [Alternate/custom key types](std/hash/alt_key_types.md)
     - [HashSet](std/hash/hashset.md)
   - [Rc](std/rc.md)
+  - [Arc](std/arc.md)
