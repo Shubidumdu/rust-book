@@ -1,8 +1,8 @@
 # Overload
 
-매크로는 여러 조합의 인수들을 받기 위해 오버로딩될 수 있습니다. 그런 점에서, `macro_rules!`는 `match` 블럭과 유사하게 동작할 수 있습니다.
+매크로는 여러 조합의 인수들을 받기 위해 오버로딩될 수 있습니다. 이를 통해, `macro_rules!`는 `match` 블럭과 유사하게 동작할 수 있습니다.
 
-```rust
+```rust,editable
 // `test!`는 어떻게 호출하느냐에 따라 다른 방식으로
 // `$left`와 `$right`를 비교합니다.
 macro_rules! test {
