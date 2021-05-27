@@ -146,3 +146,4 @@
     - [Early returns](error/result/early_returns.md)
     - [Introducing ?](error/result/enter_question_mark.md)
   - [Multiple error types](error/multiple_error_types/index.md)
+    - [Pulling Results out of Options](error/multiple_error_types/option_result.md)

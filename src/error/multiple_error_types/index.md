@@ -6,7 +6,7 @@
 
 아래 코드에서, `unwrap`의 두 예시들은 다른 에러 타입들을 만들어냅니다. `Vec::first`는 `Option`을 반환하는 반면, `parse::<i32>`는 `Result<i32, ParseIntError>`를 반환합니다.
 
-```rust
+```rust,editable
 fn double_first(vec: Vec<&str>) -> i32 {
     let first = vec.first().unwrap(); // Error 1 생성
     2 * first.parse::<i32>().unwrap() // Error 2 생성
