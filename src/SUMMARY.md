@@ -148,3 +148,4 @@
   - [Multiple error types](error/multiple_error_types/index.md)
     - [Pulling Results out of Options](error/multiple_error_types/option_result.md)
     - [Defining an error type](error/multiple_error_types/define_error_type.md)
+    - [Boxing errors](error/multiple_error_types/boxing_errors.md)

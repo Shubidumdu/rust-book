@@ -14,7 +14,7 @@ Rust는 임의의 에러 타입을 정의할 수 있게 해줍니다. 일반적�
   - Bad : `Err("+ cannot be used here".to_owned())`
 - 다른 에러들과 잘 합성(compose)될 수 있습니다.
 
-```rust
+```rust,editable
 use std::fmt;
 
 type Result<T> = std::result::Result<T, DoubleError>;
