@@ -126,3 +126,4 @@
   - [Clone](trait/clone.md)
   - [Supertraits](trait/supertraits.md)
   - [Disambiguating overlapping traits](trait/disambiguating.md)
+- [macro_rules!](macros/index.md)
