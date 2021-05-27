@@ -159,3 +159,4 @@
   - [Option](std/option.md)
   - [Result](std/result/index.md)
     - [?](std/result/question_mark.md)
+  - [panic!](std/panic.md)

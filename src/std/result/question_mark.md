@@ -2,7 +2,7 @@
 
 `match`를 통한 체이닝 결과는 상당히 지저분해 보일 수 있습니다. `?` 연산자는 이 경우 코드를 좀 더 "이쁘게" 보이도록 할 수 있습니다. `?`은 `Result`이 반환되는 Expression의 끝에 사용됩니다. `match` 문과 동일하게, `Err(err)` 분기는 `Err(From::from(err))`로 확장되며, `Ok(ok)` 분기는 `ok` 문으로 확장됩니다.
 
-```rust
+```rust,editable
 mod checked {
     #[derive(Debug)]
     enum MathError {
