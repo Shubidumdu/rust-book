@@ -150,3 +150,4 @@
     - [Defining an error type](error/multiple_error_types/define_error_type.md)
     - [Boxing errors](error/multiple_error_types/boxing_errors.md)
     - [Other uses of ?](error/multiple_error_types/reenter_question_mark.md)
+    - [Wrapping errors](error/multiple_error_types/wrapping_errors.md)
