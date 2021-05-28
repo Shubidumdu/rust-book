@@ -183,3 +183,4 @@
   - [Foreign Function Interface](std_misc/ffi.md)
 - [Testing](testing/index.md)
   - [Unit testing](testing/unit_testing.md)
+  - [Documentation testing](testing/doc_testing.md)
