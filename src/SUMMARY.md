@@ -187,3 +187,5 @@
   - [Integration testing](testing/integration_testing.md)
   - [Development dependencies](testing/dev_dependencies.md)
 - [Unsafe Operations](unsafe/index.md)
+- [Compatibility](compatibility/index.md)
+  - [Raw identifiers](compatibility/raw_identifiers.md)
