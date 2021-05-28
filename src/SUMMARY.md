@@ -171,3 +171,4 @@
   - [Channels](std_misc/channels.md)
   - [Path](std_misc/path.md)
   - [File I/O](std_misc/file/index.md)
+  - [open](std_misc/file/open.md)
