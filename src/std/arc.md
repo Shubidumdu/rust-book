@@ -2,7 +2,7 @@
 
 스레드 간에도 소유권의 공유가 필요할 때, `Arc`(Atomic Reference Counted)가 사용될 수 있습니다. 이 구조는 `Clone` 구현을 통해, 참조 카운트를 증가시키며, 동시에 메모리 힙 내의 값의 위치에 대한 참조 포인터를 생성합니다. 이는 쓰레드 간의 소유권도 공유할 수 있기 때문에, 값에 대한 마지막 참조 포인터가 스코프를 벗어나게 되면, 해당 변수도 제거됩니다.
 
-```rust
+```rust,editable
 fn main() {
   use std::sync::Arc;
   use std::thread;

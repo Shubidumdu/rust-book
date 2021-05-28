@@ -165,3 +165,4 @@
     - [HashSet](std/hash/hashset.md)
   - [Rc](std/rc.md)
   - [Arc](std/arc.md)
+- [Std misc](std_misc/index.md)
