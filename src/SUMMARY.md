@@ -184,3 +184,4 @@
 - [Testing](testing/index.md)
   - [Unit testing](testing/unit_testing.md)
   - [Documentation testing](testing/doc_testing.md)
+  - [Integration testing](testing/integration_testing.md)
