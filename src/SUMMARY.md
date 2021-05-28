@@ -189,3 +189,5 @@
 - [Unsafe Operations](unsafe/index.md)
 - [Compatibility](compatibility/index.md)
   - [Raw identifiers](compatibility/raw_identifiers.md)
+- [Meta](meta/index.md)
+  - [Documentation](meta/doc.md)
