@@ -166,3 +166,4 @@
   - [Rc](std/rc.md)
   - [Arc](std/arc.md)
 - [Std misc](std_misc/index.md)
+  - [Threads](std_misc/threads.md)
