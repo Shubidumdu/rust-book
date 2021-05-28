@@ -176,3 +176,4 @@
     - [read_lines](std_misc/file/read_lines.md)
   - [Child processes](std_misc/process/index.md)
     - [Pipes](std_misc/process/pipe.md)
+    - [Wait](std_misc/process/wait.md)
