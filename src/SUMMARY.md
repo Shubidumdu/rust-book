@@ -181,3 +181,4 @@
   - [Program arguments](std_misc/arg/index.md)
     - [Argument parsing](std_misc/arg/matching.md)
   - [Foreign Function Interface](std_misc/ffi.md)
+- [Testing](testing/index.md)
