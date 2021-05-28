@@ -173,3 +173,4 @@
   - [File I/O](std_misc/file/index.md)
     - [open](std_misc/file/open.md)
     - [create](std_misc/file/create.md)
+    - [read_lines](std_misc/file/read_lines.md)
