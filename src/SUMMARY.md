@@ -166,4 +166,5 @@
   - [Rc](std/rc.md)
   - [Arc](std/arc.md)
 - [Std misc](std_misc/index.md)
-  - [Threads](std_misc/threads.md)
+  - [Threads](std_misc/threads/index.md)
+    - [Testcase: map-reduce](std_misc/threads/testcase_mapreduce.md)
