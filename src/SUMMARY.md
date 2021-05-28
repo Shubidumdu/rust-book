@@ -174,3 +174,4 @@
     - [open](std_misc/file/open.md)
     - [create](std_misc/file/create.md)
     - [read_lines](std_misc/file/read_lines.md)
+  - [Child processes](std_misc/process/index.md)
