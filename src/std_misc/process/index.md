@@ -4,7 +4,7 @@
 
 `process::Command` 구조는 프로세스 작성기입니다.
 
-```rust
+```rust,editable
 use std::process::Command;
 
 fn main() {
