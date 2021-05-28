@@ -169,3 +169,4 @@
   - [Threads](std_misc/threads/index.md)
     - [Testcase: map-reduce](std_misc/threads/testcase_mapreduce.md)
   - [Channels](std_misc/channels.md)
+  - [Path](std_misc/path.md)
